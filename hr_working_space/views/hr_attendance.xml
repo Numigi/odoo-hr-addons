@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_attendance_with_working_space_form" model="ir.ui.view">
+        <field name="name">HR Attendance Form with working space</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <field name="employee_id" position="after">
+                <field name="working_space_id"/>
+            </field>
+        </field>
+    </record>
+    <record id="hr_attendance_with_working_space_tree" model="ir.ui.view">
+        <field name="name">HR Attendance Tree with working space</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <field name="employee_id" position="after">
+                <field name="working_space_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_working_space_view_filter" model="ir.ui.view">
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="name">HR Attendance filter with working space</field>
+        <field name="model">hr.attendance</field>
+        <field name="arch" type="xml">
+            <field name="department_id" position="after">
+                <field name="working_space_id"/>
+            </field>
+            <filter name="groupby_name" position="after">
+                <filter name="groupby_working_space" string="Working Space" context="{'group_by':'working_space_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>
