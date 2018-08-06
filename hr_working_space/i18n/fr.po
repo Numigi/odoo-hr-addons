@@ -1,0 +1,141 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_working_space
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-08 19:49+0000\n"
+"PO-Revision-Date: 2018-06-08 19:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_active
+msgid "Active"
+msgstr "Active"
+
+#. module: hr_working_space
+#: model:ir.model,name:hr_working_space.model_hr_attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: hr_working_space
+#. openerp-web
+#: code:addons/hr_working_space/static/src/xml/working_space_attendance.xml:10
+#, python-format
+msgid "Click on a working space to check in"
+msgstr "Noter l'arrivée en cliquant sur un espace de travail"
+
+#. module: hr_working_space
+#. openerp-web
+#: code:addons/hr_working_space/static/src/xml/working_space_attendance.xml:19
+#, python-format
+msgid "Click to check out"
+msgstr "Noter la sortie"
+
+#. module: hr_working_space
+#: model:ir.actions.act_window,help:hr_working_space.action_hr_working_spaces_form
+msgid "Click to define a new working space."
+msgstr "Créer le premier espace de travail "
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: hr_working_space
+#: model:ir.model,name:hr_working_space.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: hr_working_space
+#. openerp-web
+#: code:addons/hr_working_space/static/src/js/working_space_my_attendances.js:30
+#, python-format
+msgid "Error : Could not find employee linked to user"
+msgstr "Erreur : impossible de trouver l'employé associé à l'utilisateur"
+
+#. module: hr_working_space
+#. openerp-web
+#: code:addons/hr_working_space/static/src/xml/working_space_attendance.xml:23
+#, python-format
+msgid "Error : Could not find employee linked to user."
+msgstr "Erreur : impossible de trouver l'employé associé à l'utilisateur."
+
+#. module: hr_working_space
+#: model:ir.model.fields,help:hr_working_space.field_hr_working_space_icon
+msgid "Font Awesome code of the icon that will represent the working space. See https://fontawesome.com/icons?d=gallery."
+msgstr "Le code Font Awesome qui représentera l'espace de travail. Voir https://fontawesome.com/icons?d=gallery."
+
+#. module: hr_working_space
+#: model:ir.model,name:hr_working_space.model_hr_working_space
+msgid "HR Working Space"
+msgstr "RH Espace de Travail"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_icon
+msgid "Icon"
+msgstr "Icone"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: hr_working_space
+#. openerp-web
+#: code:addons/hr_working_space/static/src/xml/working_space_attendance.xml:8
+#, python-format
+msgid "Welcome"
+msgstr "Bienvenu"
+
+#. module: hr_working_space
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_attendance_working_space_id
+#: model:ir.ui.view,arch_db:hr_working_space.hr_working_space_view_filter
+msgid "Working Space"
+msgstr "Espace de travail"
+
+#. module: hr_working_space
+#: model:ir.actions.act_window,name:hr_working_space.action_hr_working_spaces_form
+#: model:ir.ui.menu,name:hr_working_space.menu_action_warehouse_form
+#: model:ir.ui.view,arch_db:hr_working_space.view_hr_working_space_form
+#: model:ir.ui.view,arch_db:hr_working_space.view_hr_working_space_tree
+msgid "Working Spaces"
+msgstr "Espaces de travail"
+
