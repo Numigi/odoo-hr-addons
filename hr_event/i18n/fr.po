@@ -23,20 +23,6 @@ msgid "Active"
 msgstr "Active"
 
 #. module: hr_event
-#. openerp-web
-#: code:addons/hr_event/static/src/xml/working_space_attendance.xml:10
-#, python-format
-msgid "Click on a working space to check in"
-msgstr "Noter l'arrivée en cliquant sur un espace de travail"
-
-#. module: hr_event
-#. openerp-web
-#: code:addons/hr_event/static/src/xml/working_space_attendance.xml:18
-#, python-format
-msgid "Click to check out"
-msgstr "Noter la sortie"
-
-#. module: hr_event
 #: model:ir.model.fields,field_description:hr_event.field_hr_event_create_uid
 #: model:ir.model.fields,field_description:hr_event.field_hr_event_type_create_uid
 msgid "Created by"
@@ -71,20 +57,6 @@ msgstr "Nom à afficher"
 #: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
 msgid "Employee"
 msgstr "Employé"
-
-#. module: hr_event
-#. openerp-web
-#: code:addons/hr_event/static/src/js/working_space_my_attendances.js:28
-#, python-format
-msgid "Error : Could not find employee linked to user"
-msgstr "Erreur : impossible de trouver l'employé associé à l'utilisateur"
-
-#. module: hr_event
-#. openerp-web
-#: code:addons/hr_event/static/src/xml/working_space_attendance.xml:22
-#, python-format
-msgid "Error : Could not find employee linked to user."
-msgstr "Erreur : impossible de trouver l'employé associé à l'utilisateur."
 
 #. module: hr_event
 #: model:ir.ui.view,arch_db:hr_event.view_hr_event_form
@@ -157,10 +129,3 @@ msgstr "Nombre d'événements"
 #: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
 msgid "Type"
 msgstr "Type"
-
-#. module: hr_event
-#. openerp-web
-#: code:addons/hr_event/static/src/xml/working_space_attendance.xml:8
-#, python-format
-msgid "Welcome"
-msgstr "Bienvenu"
