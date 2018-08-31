@@ -1,0 +1,166 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_working_space
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-31 16:26-0400\n"
+"PO-Revision-Date: 2018-08-31 16:28-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_active
+msgid "Active"
+msgstr "Active"
+
+#. module: hr_event
+#. openerp-web
+#: code:addons/hr_event/static/src/xml/working_space_attendance.xml:10
+#, python-format
+msgid "Click on a working space to check in"
+msgstr "Noter l'arrivée en cliquant sur un espace de travail"
+
+#. module: hr_event
+#. openerp-web
+#: code:addons/hr_event/static/src/xml/working_space_attendance.xml:18
+#, python-format
+msgid "Click to check out"
+msgstr "Noter la sortie"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_create_uid
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_create_date
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_date
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
+msgid "Date"
+msgstr "Date"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_description
+msgid "Description"
+msgstr "Description"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_display_name
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: hr_event
+#: model:ir.model,name:hr_event.model_hr_employee
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_employee_id
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
+msgid "Employee"
+msgstr "Employé"
+
+#. module: hr_event
+#. openerp-web
+#: code:addons/hr_event/static/src/js/working_space_my_attendances.js:28
+#, python-format
+msgid "Error : Could not find employee linked to user"
+msgstr "Erreur : impossible de trouver l'employé associé à l'utilisateur"
+
+#. module: hr_event
+#. openerp-web
+#: code:addons/hr_event/static/src/xml/working_space_attendance.xml:22
+#, python-format
+msgid "Error : Could not find employee linked to user."
+msgstr "Erreur : impossible de trouver l'employé associé à l'utilisateur."
+
+#. module: hr_event
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_form
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_tree
+msgid "Event"
+msgstr "Événement"
+
+#. module: hr_event
+#: model:ir.model,name:hr_event.model_hr_event
+#: model:ir.model,name:hr_event.model_hr_event_type
+msgid "Event Type"
+msgstr "Type d'événement"
+
+#. module: hr_event
+#: model:ir.actions.act_window,name:hr_event.action_hr_event_type
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_type_tree
+msgid "Event Types"
+msgstr "Types d'événements"
+
+#. module: hr_event
+#: model:ir.actions.act_window,name:hr_event.action_employee_event
+#: model:ir.actions.act_window,name:hr_event.action_hr_event
+#: model:ir.ui.view,arch_db:hr_event.employee_form_with_events_smart_button
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_tree
+msgid "Events"
+msgstr "Événements"
+
+#. module: hr_event
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_id
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_id_2203
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event___last_update
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_write_uid
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_write_date
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_employee_event_count
+msgid "Number of Events"
+msgstr "Nombre d'événements"
+
+#. module: hr_event
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_id
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
+msgid "Type"
+msgstr "Type"
+
+#. module: hr_event
+#. openerp-web
+#: code:addons/hr_event/static/src/xml/working_space_attendance.xml:8
+#, python-format
+msgid "Welcome"
+msgstr "Bienvenu"

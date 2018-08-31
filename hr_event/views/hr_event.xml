@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_hr_event_form" model="ir.ui.view">
+        <field name="name">HR Event List</field>
+        <field name="model">hr.event</field>
+        <field eval="8" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Event">
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="date"/>
+                        <field name="type_id"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_event_tree" model="ir.ui.view">
+        <field name="name">HR Event List</field>
+        <field name="model">hr.event</field>
+        <field eval="8" name="priority"/>
+        <field name="arch" type="xml">
+            <tree string="Events">
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="type_id"/>
+                <field name="description" string="Event" attrs="{'style': 'min-width: 300px;'}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hr_event_search" model="ir.ui.view">
+        <field name="name">HR Event Search View</field>
+        <field name="model">hr.event</field>
+        <field name="arch" type="xml">
+            <search string="Events">
+                <field name="employee_id"/>
+                <field name="type_id"/>
+                <field name="description"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_employee_id" string="Employee" context="{'group_by': 'employee_id'}"/>
+                    <filter name="group_by_type_id" string="Type" context="{'group_by': 'type_id'}"/>
+                    <filter name="group_by_date" string="Date" context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hr_event" model="ir.actions.act_window">
+        <field name="name">Events</field>
+        <field name="res_model">hr.event</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
