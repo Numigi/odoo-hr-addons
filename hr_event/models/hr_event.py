@@ -7,7 +7,7 @@ from odoo import fields, models
 class Event(models.Model):
 
     _name = "hr.event"
-    _description = "Event Type"
+    _description = "HR Event"
     _rec_name = "description"
 
     employee_id = fields.Many2one(

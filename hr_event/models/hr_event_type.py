@@ -7,7 +7,7 @@ from odoo import fields, models
 class EventType(models.Model):
 
     _name = "hr.event.type"
-    _description = "Event Type"
+    _description = "HR Event Type"
 
     name = fields.Char(required=True, translate=True)
     active = fields.Boolean(default=True)

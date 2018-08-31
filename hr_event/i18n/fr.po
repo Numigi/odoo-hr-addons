@@ -65,12 +65,6 @@ msgid "Event"
 msgstr "Événement"
 
 #. module: hr_event
-#: model:ir.model,name:hr_event.model_hr_event
-#: model:ir.model,name:hr_event.model_hr_event_type
-msgid "Event Type"
-msgstr "Type d'événement"
-
-#. module: hr_event
 #: model:ir.actions.act_window,name:hr_event.action_hr_event_type
 #: model:ir.ui.view,arch_db:hr_event.view_hr_event_type_tree
 msgid "Event Types"
@@ -89,6 +83,16 @@ msgstr "Événements"
 #: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
 msgid "Group By"
 msgstr "Grouper par"
+
+#. module: hr_event
+#: model:ir.model,name:hr_event.model_hr_event_type
+msgid "HR Event Type"
+msgstr "Type d'événement RH"
+
+#. module: hr_event
+#: model:ir.model,name:hr_event.model_hr_event
+msgid "HR Event"
+msgstr "Événement RH"
 
 #. module: hr_event
 #: model:ir.model.fields,field_description:hr_event.field_hr_event_id
