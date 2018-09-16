@@ -14,6 +14,7 @@
         'views/hr_employee.xml',
         'views/hr_event.xml',
         'views/hr_event_type.xml',
+        'views/menu.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
