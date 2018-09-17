@@ -13,6 +13,7 @@
     'depends': [
         'hr_event',  # TA#3122
         'hr_working_space',  # TA#3896
+        'hr_holidays_half_day',  # TA#1739
     ],
     'installable': True,
 }
