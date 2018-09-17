@@ -14,8 +14,10 @@
               sequence="10"
               action="action_hr_event"/>
 
-    <menuitem id="menu_event"
+    <menuitem id="menu_event_type"
               name="Event Types"
               parent="menu_event_root"
               sequence="20"
               action="action_hr_event_type"/>
+
+</odoo>
