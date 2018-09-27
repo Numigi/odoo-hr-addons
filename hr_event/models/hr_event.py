@@ -15,4 +15,5 @@ class Event(models.Model):
     date = fields.Datetime(required=True, index=True, default=fields.Datetime.now)
     type_id = fields.Many2one(
         "hr.event.type", "Type", required=True, ondelete="restrict", index=True)
-    description = fields.Text(required=True)
+    description = fields.Char(required=True)
+    notes = fields.Text()
