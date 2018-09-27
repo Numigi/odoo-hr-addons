@@ -12,7 +12,9 @@
                         <field name="employee_id"/>
                         <field name="date"/>
                         <field name="type_id"/>
-                        <field name="description"/>
+                        <field name="create_uid" readonly="1"/>
+                        <field name="description" string="Event"/>
+                        <field name="notes"/>
                     </group>
                 </sheet>
             </form>
@@ -29,6 +31,7 @@
                 <field name="date"/>
                 <field name="type_id"/>
                 <field name="description" string="Event" attrs="{'style': 'min-width: 300px;'}"/>
+                <field name="create_uid" readonly="1"/>
             </tree>
         </field>
     </record>
