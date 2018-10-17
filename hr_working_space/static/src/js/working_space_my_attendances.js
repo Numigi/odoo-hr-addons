@@ -2,13 +2,13 @@ odoo.define("hr_working_space.working_space_my_attendances", function (require) 
     "use strict";
 
     var core = require("web.core");
-    var Widget = require("web.Widget");
+    var AbstractAction = require("web.AbstractAction");
 
     var QWeb = core.qweb;
     var _t = core._t;
 
 
-    var MyAttendancesWorkingSpace = Widget.extend({
+    var MyAttendancesWorkingSpace = AbstractAction.extend({
         events: {
             "click .o_hr_working_space_sign_in_out_icon": function (event) {
                 this.$(".o_hr_working_space_sign_in_out_icon").attr("disabled", "disabled");
