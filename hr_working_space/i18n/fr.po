@@ -1,22 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* hr_working_space
+# 	* hr_working_space
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-08 19:49+0000\n"
-"PO-Revision-Date: 2018-06-08 19:49+0000\n"
+"POT-Creation-Date: 2018-10-17 14:29+0000\n"
+"PO-Revision-Date: 2018-10-17 10:31-0400\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"X-Generator: Poedit 2.0.6\n"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_active
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__active
 msgid "Active"
 msgstr "Active"
 
@@ -34,28 +36,28 @@ msgstr "Noter l'arrivée en cliquant sur un espace de travail"
 
 #. module: hr_working_space
 #. openerp-web
-#: code:addons/hr_working_space/static/src/xml/working_space_attendance.xml:19
+#: code:addons/hr_working_space/static/src/xml/working_space_attendance.xml:18
 #, python-format
 msgid "Click to check out"
 msgstr "Noter la sortie"
 
 #. module: hr_working_space
-#: model:ir.actions.act_window,help:hr_working_space.action_hr_working_spaces_form
+#: model_terms:ir.actions.act_window,help:hr_working_space.action_hr_working_spaces_form
 msgid "Click to define a new working space."
 msgstr "Créer le premier espace de travail "
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_create_uid
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__create_uid
 msgid "Created by"
 msgstr "Créé par"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_create_date
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__create_date
 msgid "Created on"
 msgstr "Créé le"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_display_name
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__display_name
 msgid "Display Name"
 msgstr "Nom à afficher"
 
@@ -66,22 +68,26 @@ msgstr "Employé"
 
 #. module: hr_working_space
 #. openerp-web
-#: code:addons/hr_working_space/static/src/js/working_space_my_attendances.js:30
+#: code:addons/hr_working_space/static/src/js/working_space_my_attendances.js:28
 #, python-format
 msgid "Error : Could not find employee linked to user"
 msgstr "Erreur : impossible de trouver l'employé associé à l'utilisateur"
 
 #. module: hr_working_space
 #. openerp-web
-#: code:addons/hr_working_space/static/src/xml/working_space_attendance.xml:23
+#: code:addons/hr_working_space/static/src/xml/working_space_attendance.xml:22
 #, python-format
 msgid "Error : Could not find employee linked to user."
 msgstr "Erreur : impossible de trouver l'employé associé à l'utilisateur."
 
 #. module: hr_working_space
-#: model:ir.model.fields,help:hr_working_space.field_hr_working_space_icon
-msgid "Font Awesome code of the icon that will represent the working space. See https://fontawesome.com/icons?d=gallery."
-msgstr "Le code Font Awesome qui représentera l'espace de travail. Voir https://fontawesome.com/icons?d=gallery."
+#: model:ir.model.fields,help:hr_working_space.field_hr_working_space__icon
+msgid ""
+"Font Awesome code of the icon that will represent the working space. See "
+"https://fontawesome.com/icons?d=gallery."
+msgstr ""
+"Le code Font Awesome qui représentera l'espace de travail. Voir https://"
+"fontawesome.com/icons?d=gallery."
 
 #. module: hr_working_space
 #: model:ir.model,name:hr_working_space.model_hr_working_space
@@ -89,32 +95,32 @@ msgid "HR Working Space"
 msgstr "RH Espace de Travail"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_id
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__id
 msgid "ID"
 msgstr "ID"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_icon
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__icon
 msgid "Icon"
 msgstr "Icone"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space___last_update
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space____last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_write_uid
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_write_date
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__write_date
 msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space_name
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_working_space__name
 msgid "Name"
 msgstr "Nom"
 
@@ -126,16 +132,15 @@ msgid "Welcome"
 msgstr "Bienvenu"
 
 #. module: hr_working_space
-#: model:ir.model.fields,field_description:hr_working_space.field_hr_attendance_working_space_id
-#: model:ir.ui.view,arch_db:hr_working_space.hr_working_space_view_filter
+#: model:ir.model.fields,field_description:hr_working_space.field_hr_attendance__working_space_id
+#: model_terms:ir.ui.view,arch_db:hr_working_space.hr_working_space_view_filter
 msgid "Working Space"
 msgstr "Espace de travail"
 
 #. module: hr_working_space
 #: model:ir.actions.act_window,name:hr_working_space.action_hr_working_spaces_form
 #: model:ir.ui.menu,name:hr_working_space.menu_action_warehouse_form
-#: model:ir.ui.view,arch_db:hr_working_space.view_hr_working_space_form
-#: model:ir.ui.view,arch_db:hr_working_space.view_hr_working_space_tree
+#: model_terms:ir.ui.view,arch_db:hr_working_space.view_hr_working_space_form
+#: model_terms:ir.ui.view,arch_db:hr_working_space.view_hr_working_space_tree
 msgid "Working Spaces"
 msgstr "Espaces de travail"
-
