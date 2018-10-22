@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-17 14:28+0000\n"
-"PO-Revision-Date: 2018-10-17 10:30-0400\n"
+"POT-Creation-Date: 2018-09-16 11:26-0400\n"
+"PO-Revision-Date: 2018-09-16 11:26-0400\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -18,56 +18,56 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type__active
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_active
 msgid "Active"
 msgstr "Active"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__create_uid
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type__create_uid
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_create_uid
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_create_uid
 msgid "Created by"
 msgstr "Créé par"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__create_date
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type__create_date
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_create_date
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_create_date
 msgid "Created on"
 msgstr "Créé le"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__date
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_search
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_date
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
 msgid "Date"
 msgstr "Date"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__description
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_description
 msgid "Description"
 msgstr "Description"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__display_name
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type__display_name
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_display_name
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_display_name
 msgid "Display Name"
 msgstr "Nom à afficher"
 
 #. module: hr_event
 #: model:ir.model,name:hr_event.model_hr_employee
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__employee_id
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_search
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_employee_id
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
 msgid "Employee"
 msgstr "Employé"
 
 #. module: hr_event
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_form
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_tree
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_form
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_tree
 msgid "Event"
 msgstr "Événement"
 
 #. module: hr_event
 #: model:ir.actions.act_window,name:hr_event.action_hr_event_type
 #: model:ir.ui.menu,name:hr_event.menu_event_type
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_type_tree
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_type_tree
 msgid "Event Types"
 msgstr "Types d'événements"
 
@@ -76,14 +76,14 @@ msgstr "Types d'événements"
 #: model:ir.actions.act_window,name:hr_event.action_hr_event
 #: model:ir.ui.menu,name:hr_event.menu_event
 #: model:ir.ui.menu,name:hr_event.menu_event_root
-#: model_terms:ir.ui.view,arch_db:hr_event.employee_form_with_events_smart_button
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_search
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_tree
+#: model:ir.ui.view,arch_db:hr_event.employee_form_with_events_smart_button
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_tree
 msgid "Events"
 msgstr "Événements"
 
 #. module: hr_event
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_search
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
 msgid "Group By"
 msgstr "Grouper par"
 
@@ -98,46 +98,41 @@ msgid "HR Event Type"
 msgstr "Type d'événement RH"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__id
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type__id
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_id
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_id_2224
 msgid "ID"
 msgstr "ID"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event____last_update
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type____last_update
+#: model:ir.model.fields,field_description:hr_event.field_hr_event___last_update
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type___last_update
 msgid "Last Modified on"
 msgstr "Dernière modification le"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__write_uid
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type__write_uid
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_write_uid
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_write_uid
 msgid "Last Updated by"
 msgstr "Dernière mise à jour par"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__write_date
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type__write_date
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_write_date
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_write_date
 msgid "Last Updated on"
 msgstr "Dernière mise à jour le"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event_type__name
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_name
 msgid "Name"
 msgstr "Nom"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__notes
-msgid "Notes"
-msgstr ""
-
-#. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_employee__event_count
+#: model:ir.model.fields,field_description:hr_event.field_hr_employee_event_count
 msgid "Number of Events"
 msgstr "Nombre d'événements"
 
 #. module: hr_event
-#: model:ir.model.fields,field_description:hr_event.field_hr_event__type_id
-#: model_terms:ir.ui.view,arch_db:hr_event.view_hr_event_search
+#: model:ir.model.fields,field_description:hr_event.field_hr_event_type_id
+#: model:ir.ui.view,arch_db:hr_event.view_hr_event_search
 msgid "Type"
 msgstr "Type"
