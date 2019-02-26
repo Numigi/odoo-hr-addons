@@ -49,13 +49,6 @@
         </field>
     </record>
 
-    <!--Redirect the action to have the custom views-->
-    <record id="hr_attendance.hr_attendance_action_my_attendances" model="ir.actions.client">
-        <field name="name">Attendances with Working Spaces</field>
-        <field name="tag">hr_working_space_my_attendances</field>
-        <field name="target">main</field>
-    </record>
-
     <menuitem id="menu_action_warehouse_form"
               name="Working Spaces"
               parent="hr_attendance.menu_hr_attendance_manage_attendances"
