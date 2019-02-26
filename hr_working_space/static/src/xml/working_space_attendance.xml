@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template xml:space="preserve">
 
-    <t t-name="HrWorkingSpaceMyMainMenu">
-        <div class="o_hr_attendance_kiosk_mode_container o_app_switcher_background">
-            <div class="o_hr_attendance_kiosk_mode">
-                <t t-if="widget.employee">
-                    <h1>Welcome <t t-esc="widget.employee.name"/></h1>
-                    <t t-if="widget.employee.attendance_state=='checked_out'">
-                        <h2>Click on a working space to check in</h2>
-                        <t t-foreach="widget.workingSpaces" t-as="working_space">
-                            <i t-att-id="working_space.id"
-                               t-att-title="working_space.name"
-                               t-att-class="working_space.icon + ' fa-3x fa o_hr_working_space_sign_in_out_icon btn-primary o_hr_working_space_icon'"/>
-                        </t>
-                    </t>
-                    <t t-if="widget.employee.attendance_state=='checked_in'">
-                        <h2>Click to check out</h2>
-                        <i class="fa fa-sign-out btn-primary o_hr_attendance_sign_in_out_icon o_hr_working_space_sign_in_out_icon"/>
-                    </t>
-                </t>
-                <t t-if="!widget.employee">
-                    Error : Could not find employee linked to user.
-                </t>
-            </div>
-        </div>
+    <t t-extend="HrAttendanceMyMainMenu">
+        <xpath t-jquery="a.fa-sign-in" t-operation="replace">
+            <t t-foreach="widget.workingSpaces" t-as="working_space" t-if="!checked_in">
+                <i t-att-id="working_space.id"
+                   t-att-title="working_space.name"
+                   t-att-class="working_space.icon + ' fa-3x fa o_hr_working_space_sign_in btn-primary o_hr_working_space_icon'"/>
+            </t>
+        </xpath>
     </t>
 
 </template>
