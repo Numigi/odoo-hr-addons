@@ -2,61 +2,53 @@ jobs:
   tests:
     machine: true
     steps:
-       - checkout
+      - checkout
 
-       - run:
-          name: Login to Quay.io
-          command: docker login quay.io -u "${QUAY_USER}" -p "${QUAY_TOKEN}"
-
-       - run:
+      - run:
           name: Build -- Init Database
           command: docker-compose run --rm odoo odoo --stop-after-init -i main
 
-       - run:
+      - run:
           name: Setup Log Folder For Reports
           command: sudo mkdir -p .log && sudo chmod 777 .log
 
-       - run:
+      - run:
           name: Run Test
           command: docker-compose run --rm odoo run_pytest.sh
 
-       - run:
+      - run:
           name: Codacy Coverage
           command: |
             pip install codacy-coverage==1.3.10
             python-codacy-coverage -r .log/coverage.xml
 
-       - store_test_results:
+      - store_test_results:
           path: .log
 
-  # job that find the next tag for the odoo-base and push the tag to github.
+  # job that find the next tag for the current branch/repo and push the tag to github.
   # it will trigger the publish of a new docker image.
   auto-tag:
     machine: true
     steps:
       - checkout
       - run:
-          name: Get next tag
+          name: Get nws
           command: |
-            echo 'export GITHUB_NEXT_TAG=$(curl -fL http://gcloud.functions.numigi.org/github_next_tag?github_user=${GITHUB_USER}\&github_password=${GITHUB_PASSWORD}\&repo=odoo-base\&filter=${CIRCLE_BRANCH/\.0/})' > $BASH_ENV
-            source $BASH_ENV
-            echo github next tag: ${GITHUB_NEXT_TAG}
+            curl -L $NWS_BIN_LOCATION > ./nws
+            chmod +x ./nws
       - run:
-          name: Create tag
+          name: Set tag
           command: |
-            echo repo: odoo-base
-            echo branch: ${CIRCLE_BRANCH}
-            echo tag: ${GITHUB_NEXT_TAG}
-            echo github_create_tag $(curl -fL http://gcloud.functions.numigi.org/github_create_tag?github_user=${GITHUB_USER}\&github_password=${GITHUB_PASSWORD}\&repo=odoo-base\&branch=${CIRCLE_BRANCH}\&tag=${GITHUB_NEXT_TAG})
+            ./nws circleci create-tag -t odoo-base
+
+
 workflows:
   version: 2
   odoo:
     jobs:
-      - tests:
-          context: quay.io
-
+      - tests
       - auto-tag:
-          context: github-robot
+          context: nws
           requires:
             - tests
           filters:
