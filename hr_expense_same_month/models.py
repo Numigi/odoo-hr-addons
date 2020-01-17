@@ -60,7 +60,7 @@ class HrExpenseSheetConstrain(models.Model):
         return months
 
     @staticmethod
-    def _raise_expenses_error(self):
+    def _raise_expenses_error():
         raise ValidationError(_(
             "All expenses must be from the same month. Please review the list of expenses."
         ))
