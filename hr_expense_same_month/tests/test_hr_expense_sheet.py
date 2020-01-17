@@ -78,6 +78,7 @@ class TestHrExpenseSheet(common.SavepointCase):
             "name": "tsheet",
             "employee_id": self.employee.id,
         })
+        sheet.write({"expense_line_ids": [(6, False, expenses)]})
         assert sheet
 
     @data(("2020-01-01", "2020-02-01"))
@@ -93,7 +94,7 @@ class TestHrExpenseSheet(common.SavepointCase):
 
     def test_create_realData_failing(self):
         with pytest.raises(ValidationError):
-            sheet = self.sheet_pool.create({
+            self.sheet_pool.create({
                 "name": "tsheet",
                 "employee_id": self.employee.id,
                 "expense_line_ids": self.real_data,
