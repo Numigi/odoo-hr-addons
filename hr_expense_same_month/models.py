@@ -13,7 +13,7 @@ class HrExpenseSheetConstrain(models.Model):
     @api.constrains('expense_line_ids')
     def _are_expenses_same_months(self):
         for record in self:
-            months = {line.date.month for line in record}
+            months = {line.date.month for line in record.expense_line_ids}
 
             if len(months) > 1:
                 raise ValidationError(_(

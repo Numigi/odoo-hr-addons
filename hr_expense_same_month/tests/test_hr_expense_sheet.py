@@ -17,29 +17,6 @@ class TestHrExpenseSheet(common.SavepointCase):
         cls.sheet_pool = cls.env["hr.expense.sheet"]
         cls.employee = cls.env.ref("hr.employee_admin")
         cls.expense = cls.env.ref("hr_expense.travel_by_air_expense").copy()
-        # Data here simulate what is sent by odoo to the line_ids field.
-        cls.real_data = [
-            [4, 244, False],
-            [1, 244, {
-                'tax_ids': [[6, False, []]],
-                'analytic_account_id': False,
-                'date': '2020-02-12',
-                'analytic_tag_ids': [[6, False, []]],
-                'company_currency_id': 2,
-                'currency_id': 2,
-                'name': 'feb'
-            }],
-            [4, 243, False],
-            [1, 243, {
-                'tax_ids': [[6, False, []]],
-                'analytic_account_id': False,
-                'date': '2020-01-16',
-                'analytic_tag_ids': [[6, False, []]],
-                'company_currency_id': 2,
-                'currency_id': 2,
-                'name': 'test'
-            }]
-        ]
 
     @data(
         ("2020-01-01",),
@@ -91,14 +68,6 @@ class TestHrExpenseSheet(common.SavepointCase):
 
         with pytest.raises(ValidationError):
             sheet.write({"expense_line_ids": [(6, False, expenses)]})
-
-    def test_create_realData_failing(self):
-        with pytest.raises(ValidationError):
-            self.sheet_pool.create({
-                "name": "tsheet",
-                "employee_id": self.employee.id,
-                "expense_line_ids": self.real_data,
-            })
 
     def _create_expenses_from_date(self, dates):
         expenses = []
