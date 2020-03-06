@@ -13,8 +13,11 @@
     'depends': [
         'hr_contract_single_open',
         'hr_contract_wage_type',  # TA#3893
+        'hr_employee_transfer',  # TA#20777
+        'hr_employee_updation',  # TA#20777
         'hr_event',  # TA#3122
         'hr_working_space',  # TA#3896
+        'hr_multi_company',  # TA#20777
         'hr_expense_same_month',  # TA#18858
     ],
     'installable': True,
