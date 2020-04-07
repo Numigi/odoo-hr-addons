@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hr.employee_mit" model="hr.employee">
+            <field name="ttype">external</field>
+        </record>
+
+        <record id="hr.employee_niv" model="hr.employee">
+            <field name="ttype">external</field>
+        </record>
+    </data>
+</odoo>

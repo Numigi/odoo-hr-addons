@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="hr_employee_add_type_form" model="ir.ui.view">
+        <field name="name">HR Employee Form: add Type</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="category_ids" position="after">
+                <group name="hr_type">
+                    <field name="ttype"/>
+                </group>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_employee_add_type_search" model="ir.ui.view">
+        <field name="name">HR Employee Search: add Type</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <field name="job_id" position="after">
+                <field name="ttype"/>
+            </field>
+            <filter name="inactive" position="before">
+                <filter string="Internal" name="internal" domain="[('ttype', '=', 'internal')]"/>
+                <filter string="External" name="external" domain="[('ttype', '=', 'external')]"/>
+                <separator/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="action_employee_internal" model="ir.actions.act_window">
+        <field name="name">Internal Employees</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="context">{ "search_default_ttype": "internal"}</field>
+        <field name="domain">[('ttype','=',"internal")]</field>
+    </record>
+
+    <record id="action_employee_external" model="ir.actions.act_window">
+        <field name="name">External Employees</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="context">{ "search_default_ttype": "external"}</field>
+        <field name="domain">[('ttype','=',"external")]</field>
+    </record>
+
+    <menuitem
+            id="menu_employee_internal"
+            name="Internal Employee"
+            parent="hr.menu_open_view_employee_list_my"
+            action="action_employee_internal"
+            sequence="100"
+    />
+    <menuitem
+            id="menu_employee_external"
+            name="External Employee"
+            parent="hr.menu_open_view_employee_list_my"
+            action="action_employee_external"
+            sequence="200"
+    />
+</odoo>

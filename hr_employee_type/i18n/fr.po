@@ -1,0 +1,59 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-07 22:05+0000\n"
+"PO-Revision-Date: 2020-04-07 22:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_type
+#: model:ir.model,name:hr_employee_type.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: hr_employee_type
+#: selection:hr.employee,ttype:0
+#: model_terms:ir.ui.view,arch_db:hr_employee_type.hr_employee_add_type_search
+msgid "External"
+msgstr "Externe"
+
+#. module: hr_employee_type
+#: model:ir.ui.menu,name:hr_employee_type.menu_employee_external
+msgid "External Employee"
+msgstr "Employé Externe"
+
+#. module: hr_employee_type
+#: model:ir.actions.act_window,name:hr_employee_type.action_employee_external
+msgid "External Employees"
+msgstr "Employés Externes"
+
+#. module: hr_employee_type
+#: selection:hr.employee,ttype:0
+#: model_terms:ir.ui.view,arch_db:hr_employee_type.hr_employee_add_type_search
+msgid "Internal"
+msgstr "Interne"
+
+#. module: hr_employee_type
+#: model:ir.ui.menu,name:hr_employee_type.menu_employee_internal
+msgid "Internal Employee"
+msgstr "Employé Interne"
+
+#. module: hr_employee_type
+#: model:ir.actions.act_window,name:hr_employee_type.action_employee_internal
+msgid "Internal Employees"
+msgstr "Employés Internes"
+
+#. module: hr_employee_type
+#: model:ir.model.fields,field_description:hr_employee_type.field_hr_employee__ttype
+msgid "Type"
+msgstr "Type"
+
