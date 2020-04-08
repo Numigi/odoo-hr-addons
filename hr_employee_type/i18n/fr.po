@@ -29,12 +29,12 @@ msgstr "Externe"
 #. module: hr_employee_type
 #: model:ir.ui.menu,name:hr_employee_type.menu_employee_external
 msgid "External Employee"
-msgstr "Employé Externe"
+msgstr "Employé externe"
 
 #. module: hr_employee_type
 #: model:ir.actions.act_window,name:hr_employee_type.action_employee_external
 msgid "External Employees"
-msgstr "Employés Externes"
+msgstr "Employés externes"
 
 #. module: hr_employee_type
 #: selection:hr.employee,ttype:0
@@ -45,12 +45,12 @@ msgstr "Interne"
 #. module: hr_employee_type
 #: model:ir.ui.menu,name:hr_employee_type.menu_employee_internal
 msgid "Internal Employee"
-msgstr "Employé Interne"
+msgstr "Employé interne"
 
 #. module: hr_employee_type
 #: model:ir.actions.act_window,name:hr_employee_type.action_employee_internal
 msgid "Internal Employees"
-msgstr "Employés Internes"
+msgstr "Employés internes"
 
 #. module: hr_employee_type
 #: model:ir.model.fields,field_description:hr_employee_type.field_hr_employee__ttype

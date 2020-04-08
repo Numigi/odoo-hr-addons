@@ -8,5 +8,5 @@ class HrEmployeeType(models.Model):
     ttype = fields.Selection(
         [("internal", "Internal"), ("external", "External")],
         "Type",
-        default=lambda record: record._context.get("search_default_ttype", "internal")
+        default="internal",
     )
