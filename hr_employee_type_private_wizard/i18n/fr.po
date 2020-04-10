@@ -1,0 +1,113 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_employee_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-14 19:00+0000\n"
+"PO-Revision-Date: 2020-04-14 15:39-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: hr_employee_type_private_wizard
+#: model:ir.model,name:hr_employee_type_private_wizard.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: hr_employee_type_private_wizard
+#: model:ir.model,name:hr_employee_type_private_wizard.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: hr_employee_type_private_wizard
+#: model:ir.model,name:hr_employee_type_private_wizard.model_hr_employee_private_wizard
+msgid "Employee Private Data Wizard"
+msgstr ""
+
+#. module: hr_employee_type_private_wizard
+#: model:ir.model.fields,field_description:hr_employee_type_private_wizard.field_res_partner__employee_type
+#: model:ir.model.fields,field_description:hr_employee_type_private_wizard.field_res_users__employee_type
+msgid "Employee Type"
+msgstr "Type d'employé"
+
+#. module: hr_employee_type_private_wizard
+#: selection:res.partner,employee_type:0
+msgid "External"
+msgstr "Externe"
+
+#. module: hr_employee_type_private_wizard
+#: selection:res.partner,employee_type:0
+msgid "Internal"
+msgstr "Interne"
+
+#. module: hr_employee_type_private_wizard
+#: model:res.groups,name:hr_employee_type_private_wizard.group_external
+msgid "Manage Private Information (External Employees)"
+msgstr "Gérer informations privées (employés externes)"
+
+#. module: hr_employee_type_private_wizard
+#: model:res.groups,name:hr_employee_type_private_wizard.group_internal
+msgid "Manage Private Information (Internal Employees)"
+msgstr "Gérer informations privées (employés internes)"
+
+#. module: hr_employee_type_private_wizard
+#: model_terms:ir.ui.view,arch_db:hr_employee_type_private_wizard.hr_employee_form
+msgid "Private Information"
+msgstr "Informations personnelles"
+
+#. module: hr_employee_type_private_wizard
+#: model:ir.model,name:hr_employee_type_private_wizard.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: hr_employee_type_private_wizard
+#: code:addons/hr_employee_type_private_wizard/wizard/hr_employee_private_wizard.py:29
+#, python-format
+msgid ""
+"You are not allowed to access private information of external employees."
+msgstr ""
+"Vous n'êtes pas autorisés à accéder aux informations personnelles des "
+"employés externes."
+
+#. module: hr_employee_type_private_wizard
+#: code:addons/hr_employee_type_private_wizard/wizard/hr_employee_private_wizard.py:19
+#, python-format
+msgid ""
+"You are not allowed to access private information of internal employees."
+msgstr ""
+"Vous n'êtes pas autorisés à accéder aux informations personnelles des "
+"employés internes."
+
+#. module: hr_employee_type_private_wizard
+#: code:addons/hr_employee_type_private_wizard/models/res_partner.py:59
+#, python-format
+msgid ""
+"You are not allowed to access this partner because it is the home address of "
+"an external employee."
+msgstr ""
+"Vous n'êtes pas autorisés à accéder à ce partenaire car il s'agit d'une "
+"adresse personnelle d'un employé externe."
+
+#. module: hr_employee_type_private_wizard
+#: code:addons/hr_employee_type_private_wizard/models/res_partner.py:50
+#, python-format
+msgid ""
+"You are not allowed to access this partner because it is the home address of "
+"an internal employee."
+msgstr ""
+"Vous n'êtes pas autorisés à accéder à ce partenaire car il s'agit d'une "
+"adresse personnelle d'un employé interne."
+
+#. module: hr_employee_type_private_wizard
+#: code:addons/hr_employee_type_private_wizard/models/hr_employee.py:38
+#, python-format
+msgid "You are not allowed to change the type of an employee."
+msgstr "Vous n'êtes pas autorisé à modifier le type d'un employé."

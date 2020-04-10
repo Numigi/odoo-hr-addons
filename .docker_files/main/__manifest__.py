@@ -13,10 +13,12 @@
     'depends': [
         'hr_contract_single_open',
         'hr_contract_wage_type',  # TA#3893
+        'hr_employee_private_wizard',
         'hr_employee_type',  # TA#15755
+        'hr_employee_type_private_wizard',
         'hr_event',  # TA#3122
-        'hr_working_space',  # TA#3896
         'hr_expense_same_month',  # TA#18858
+        'hr_working_space',  # TA#3896
     ],
     'installable': True,
 }

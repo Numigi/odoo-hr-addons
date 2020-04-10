@@ -2,16 +2,21 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
-    "name": "HR Employee Private Wizard",
+    "name": "HR Employee Type Private Wizard",
     "version": "1.0.0",
     "author": "Numigi",
     "maintainer": "Numigi",
     "license": "LGPL-3",
     "category": "Human Resources",
-    "summary": "Add a type on employee",
+    "summary": "Private access to internal / external employees",
     "depends": [
-        "hr",
-        "private_data_group",
+        "base_view_inheritance_extension",
+        "hr_employee_type",
+        "hr_employee_private_wizard",
+    ],
+    "data": [
+        "security/res_groups.xml",
+        "views/hr_employee.xml",
     ],
     "installable": True,
 }

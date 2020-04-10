@@ -7,6 +7,12 @@ services:
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./.log:/var/log/odoo
+      - ../base-addons/base_extended_security:/mnt/extra-addons/base_extended_security
+      - ../base-addons/private_data_group:/mnt/extra-addons/private_data_group
+      - ../base-addons/test_http_request:/mnt/extra-addons/test_http_request
+      - ./hr_employee_private_wizard:/mnt/extra-addons/hr_employee_private_wizard
+      - ./hr_employee_type:/mnt/extra-addons/hr_employee_type
+      - ./hr_employee_type_private_wizard:/mnt/extra-addons/hr_employee_type_private_wizard
     ports:
       - "8069:8069"
       - "8071:8071"

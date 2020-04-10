@@ -6,24 +6,22 @@ from odoo.tests.common import SavepointCase
 
 
 class TestPrivateWizard(SavepointCase):
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
 
         cls.gender = "female"
 
-        cls.employee = cls.env["hr.employee"].create({
-            "name": "My Employee",
-            "gender": cls.gender,
-        })
+        cls.employee = cls.env["hr.employee"].create(
+            {"name": "My Employee", "gender": cls.gender,}
+        )
 
-        cls.wizard = cls.env["hr.employee.private.wizard"].create({
-            "employee_id": cls.employee.id,
-        })
+        cls.wizard = cls.env["hr.employee.private.wizard"].create(
+            {"employee_id": cls.employee.id,}
+        )
 
     def test_private_field_in_fields_view_get(self):
-        result = self.wizard.fields_view_get(view_type='form')
+        result = self.wizard.fields_view_get(view_type="form")
         assert "gender" in result["fields"]
 
     def test_private_field_in_fields_get(self):
@@ -31,14 +29,16 @@ class TestPrivateWizard(SavepointCase):
         assert "gender" in fields
 
     def test_private_field_in_fields_view_get_arch(self):
-        result = self.wizard.fields_view_get(view_type='form')
+        result = self.wizard.fields_view_get(view_type="form")
         tree = result["arch"]
-        assert etree.fromstring(tree).xpath("//field[@name='gender']")
+        field = etree.fromstring(tree).xpath("//field[@name='gender']")[0]
+        assert field.attrib["modifiers"] == "{}"
 
     def test_public_field_in_fields_view_get_arch(self):
-        result = self.wizard.fields_view_get(view_type='form')
+        result = self.wizard.fields_view_get(view_type="form")
         tree = result["arch"]
-        assert not etree.fromstring(tree).xpath("//field[@name='category_ids']")
+        field = etree.fromstring(tree).xpath("//field[@name='category_ids']")[0]
+        assert field.attrib["modifiers"] == '{"invisible": []}'
 
     def test_read(self):
         data = self.wizard.read()[0]

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="hr_employee_form" model="ir.ui.view">
+        <field name="name">HR Employee Form: add button to open private data</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_employee_type.hr_employee_add_type_form"/>
+        <field name="arch" type="xml">
+            <group name="hr_type" position="inside">
+                <div colspan="2">
+                    <button
+                        string="Private Information"
+                        name="action_open_private_data_wizard"
+                        type="object"
+                        groups="hr_employee_type_private_wizard.group_internal"
+                        attrs="{'invisible': [('ttype', '!=', 'internal')]}"
+                        />
+                    <button
+                        string="Private Information"
+                        name="action_open_private_data_wizard"
+                        type="object"
+                        groups="hr_employee_type_private_wizard.group_external"
+                        attrs="{'invisible': [('ttype', '!=', 'external')]}"
+                        />
+                </div>
+            </group>
+        </field>
+    </record>
+
+    <record id="hr_employee_form_with_type_propagated_to_home_address" model="ir.ui.view">
+        <field name="name">HR Employee Form: propagate employee type to home address</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="address_home_id" position="attributes">
+                <attribute name="context" operation="python_dict" key="default_employee_type">ttype</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_employee_form_with_type_readonly" model="ir.ui.view">
+        <field name="name">HR Employee Form: make employee type readonly</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_employee_type.hr_employee_add_type_form"/>
+        <field name="arch" type="xml">
+            <field name="ttype" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_employee_form_with_type_editable" model="ir.ui.view">
+        <field name="name">HR Employee Form: make employee type editable for members of private data group</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_employee_form_with_type_readonly"/>
+        <field name="groups_id" eval="[(4, ref('private_data_group.group_private_data'))]"/>
+        <field name="arch" type="xml">
+            <field name="ttype" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>
