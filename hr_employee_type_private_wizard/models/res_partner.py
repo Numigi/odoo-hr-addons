@@ -3,7 +3,7 @@
 
 from odoo import fields, models, _
 from odoo.exceptions import AccessError
-from odoo.osv.expression import AND, OR
+from odoo.osv.expression import OR
 
 
 class Partner(models.Model):
