@@ -6,8 +6,10 @@
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
             <field name="category_ids" position="after">
-                <group name="hr_type">
-                    <field name="ttype"/>
+                <group>
+                    <group name="hr_type">
+                        <field name="ttype"/>
+                    </group>
                 </group>
             </field>
         </field>
