@@ -17,7 +17,7 @@ This module adds a wizard.
 
 This wizard is created from an employee record.
 
-When the wizard is open, it shows the sensitive data of the employee.
+When the wizard is <span class="x x-first x-last">opened</span>, it shows the sensitive data of the employee.
 When the wizard is saved, the sensitive data is saved to the employee.
 
 Extending this Module
