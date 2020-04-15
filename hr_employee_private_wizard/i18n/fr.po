@@ -74,24 +74,3 @@ msgstr ""
 #, python-format
 msgid "Save and Close"
 msgstr "Sauvegarder et fermer"
-
-#~ msgid "External"
-#~ msgstr "Externe"
-
-#~ msgid "External Employee"
-#~ msgstr "Employé externe"
-
-#~ msgid "External Employees"
-#~ msgstr "Employés externes"
-
-#~ msgid "Internal"
-#~ msgstr "Interne"
-
-#~ msgid "Internal Employee"
-#~ msgstr "Employé interne"
-
-#~ msgid "Internal Employees"
-#~ msgstr "Employés internes"
-
-#~ msgid "Type"
-#~ msgstr "Type"
