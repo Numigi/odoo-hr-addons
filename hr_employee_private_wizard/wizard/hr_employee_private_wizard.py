@@ -51,6 +51,8 @@ class EmployeePrivateWizard(models.TransientModel):
         self._remove_non_private_arch_nodes(tree)
         _make_name_field_readonly(tree)
         _remove_image_field(tree)
+        tree.attrib["edit"] = "0"
+        tree.attrib["create"] = "0"
         tree.append(self._get_form_footer())
         result["arch"] = etree.tostring(tree)
         result["model"] = self._name
@@ -59,9 +61,20 @@ class EmployeePrivateWizard(models.TransientModel):
     def _get_form_footer(self):
         footer = etree.fromstring(WIZARD_FOOTER)
         buttons = footer.getchildren()
-        buttons[0].attrib["string"] = _("Save and Close")
-        buttons[1].attrib["string"] = _("Cancel")
+        save_button = buttons[0]
+        cancel_button = buttons[1]
+
+        if self._user_has_edit_access():
+            save_button.attrib["string"] = _("Save and Close")
+            cancel_button.attrib["string"] = _("Cancel")
+        else:
+            footer.remove(save_button)
+            cancel_button.attrib["string"] = _("Close")
         return footer
+
+    def _user_has_edit_access(self):
+        employee = self._get_employee().sudo(self.env.user)
+        return employee.check_access_rights("write", False)
 
     def _remove_non_private_arch_nodes(self, tree):
         private_fields = (

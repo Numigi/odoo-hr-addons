@@ -24,6 +24,12 @@ msgid "Cancel"
 msgstr "Annuler"
 
 #. module: hr_employee_private_wizard
+#: code:addons/hr_employee_private_wizard/wizard/hr_employee_private_wizard.py:63
+#, python-format
+msgid "Close"
+msgstr "Fermer"
+
+#. module: hr_employee_private_wizard
 #: model:ir.model.fields,field_description:hr_employee_private_wizard.field_hr_employee_private_wizard__create_uid
 msgid "Created by"
 msgstr "Créé par"

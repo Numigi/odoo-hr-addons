@@ -31,6 +31,13 @@ class EmployeePrivateWizard(models.TransientModel):
                     )
                 )
 
+    def check_extended_security_write(self):
+        super().check_extended_security_write()
+        employee = self._get_employee().sudo(self.env.user)
+        employee.check_extended_security_write()
+        employee.check_access_rights("write")
+        employee.check_access_rule("write")
+
     def _is_internal_employee(self):
         return self._get_employee().ttype == "internal"
 
