@@ -14,4 +14,9 @@ class Employee(models.Model):
         )
         action = wizard.get_formview_action()
         action["target"] = "new"
+
+        has_write_access = self.check_access_rights("write", False)
+        action["flags"] = {
+            "mode": "edit" if has_write_access else "readonly",
+        }
         return action

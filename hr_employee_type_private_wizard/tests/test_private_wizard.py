@@ -68,6 +68,12 @@ class TestPrivateWizard(SavepointCase):
         with pytest.raises(AccessError):
             self.wizard.check_extended_security_all()
 
+    def test_access_in_write_mode__without_write_access_to_employee(self):
+        self.user.groups_id |= self.group_internal | self.group_external
+        self.user.groups_id -= self.env.ref("hr.group_hr_user")
+        with pytest.raises(AccessError):
+            self.wizard.check_extended_security_write()
+
     def test_access_internal_employee_address__with_internal_group(self):
         self.user.groups_id |= self.group_internal
         self.employee_address.check_extended_security_all()
