@@ -51,6 +51,7 @@ class EmployeePrivateWizard(models.TransientModel):
         self._remove_non_private_arch_nodes(tree)
         _make_name_field_readonly(tree)
         _remove_image_field(tree)
+        _remove_org_chart(tree)
         tree.attrib["edit"] = "0"
         tree.attrib["create"] = "0"
         tree.append(self._get_form_footer())
@@ -112,5 +113,14 @@ def _make_name_field_readonly(tree):
 
 
 def _remove_image_field(tree):
-    field = tree.xpath("//field[@name='image']")[0]
-    field.getparent().remove(field)
+    _remove_node(tree, "//field[@name='image']")
+
+
+def _remove_org_chart(tree):
+    _remove_node(tree, "//field[@name='child_ids']")
+
+
+def _remove_node(tree, xpath):
+    nodes = tree.xpath(xpath)
+    for node in nodes:
+        node.getparent().remove(node)
