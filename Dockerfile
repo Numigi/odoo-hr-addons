@@ -13,6 +13,7 @@ RUN gitoo install-all --conf_file /gitoo.yml --destination "${THIRD_PARTY_ADDONS
 
 USER odoo
 
+COPY hr_attendance_menu_unrestricted /mnt/extra-addons/hr_attendance_menu_unrestricted
 COPY hr_contract_single_open /mnt/extra-addons/hr_contract_single_open
 COPY hr_contract_wage_type /mnt/extra-addons/hr_contract_wage_type
 COPY hr_employee_private_wizard /mnt/extra-addons/hr_employee_private_wizard
