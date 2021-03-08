@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="hr_attendance.hr_attendance_rule_attendance_employee" model="ir.rule">
+        <field name="perm_read" eval="1"/>
+    </record>
+
+</odoo>
