@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="hr_attendance_with_niko_niko_mood_form" model="ir.ui.view">
+        <field name="name">HR Attendance Form with Niko-niko mood</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="niko_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_attendance_with_niko_niko_mood_tree" model="ir.ui.view">
+        <field name="name">HR Attendance Tree with Niko-niko mood</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[last()]" position="after">
+                <field name="niko_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="hr_niko_niko_view_filter" model="ir.ui.view">
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="name">HR Attendance filter with Niko-niko mood</field>
+        <field name="model">hr.attendance</field>
+        <field name="arch" type="xml">
+
+            <xpath expr="//filter[@name='nocheckout']" position="after">
+                <filter name="niko_id" string="Informed mood" domain="[('niko_id', '!=', False)]"/>
+            </xpath>
+
+            <xpath expr="//field[@name='department_id']" position="after">
+                <field name="niko_id" string="Mood"/>
+            </xpath>
+
+            <xpath expr="//filter[@name='groupby_name']" position="after">
+                <filter name="groupby_niko_id" string="Mood" context="{'group_by':'niko_id'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

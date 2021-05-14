@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_hr_niko_niko,access_hr_niko_niko,model_hr_niko_niko,,1,0,0,0
+access_hr_niko_niko_manager,access_hr_niko_niko,model_hr_niko_niko,base.group_erp_manager,1,1,1,1

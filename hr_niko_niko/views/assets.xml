@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ 
+    <template id="assets_backend" name="hr_attendance assets niko" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+
+            <script type="text/javascript" src="/hr_niko_niko/static/src/js/my_attendances.js"></script>
+            <script type="text/javascript" src="/hr_niko_niko/static/src/js/niko_niko_my_attendances.js"></script>
+            <link rel="stylesheet" href="/hr_niko_niko/static/src/css/hr_niko_niko.css"/>
+            
+        </xpath>
+    </template>
+    
+
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="menu_action_niko"
+              name="Niko-niko mood"
+              parent="hr_attendance.menu_hr_attendance_manage_attendances"
+              sequence="50"
+              groups="hr_attendance.group_hr_attendance_user"
+              action="action_hr_niko_niko"/>
+
+</odoo>
