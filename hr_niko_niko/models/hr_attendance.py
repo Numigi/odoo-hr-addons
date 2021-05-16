@@ -10,22 +10,7 @@ class HRWorkingSpace(models.Model):
 
     niko_id = fields.Many2one(
         'hr.niko.niko',
-        string='Niko-niko mood'
+        string='Niko-niko mood',
+        ondelete='restrict'
     )
 
-
-class HREmployeeWorkingSpace(models.Model):
-    _inherit = 'hr.employee'
-
-    @api.multi
-    def attendance_manual_niko_niko(self, next_action, niko_id=None, entered_pin=None):
-        res = self.attendance_manual(
-            next_action,
-            entered_pin=entered_pin
-        )
-        if niko_id:
-            attendance = self.env['hr.attendance'].search(
-                [('id', '=', res['action']['attendance']['id'])], limit=1
-            )
-            attendance.niko_id = niko_id
-        return res

@@ -4,7 +4,6 @@
 
 from odoo import api, fields, models
 
-
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
 
@@ -13,6 +12,21 @@ class HrEmployee(models.Model):
         compute='_compute_attendance_time_in'
     )
 
+
+    @api.multi
+    def attendance_manual_niko_niko(self, next_action, niko_id=None, entered_pin=None):
+        res = self.attendance_manual(
+            next_action,
+            entered_pin=entered_pin
+        )
+        if niko_id:
+            attendance = self.env['hr.attendance'].search(
+                [('id', '=', res['action']['attendance']['id'])], limit=1
+            )
+            attendance.niko_id = niko_id
+        return res
+        
+        
     def _Float_To_Time(self, Myfloat):
         hour, minute = divmod(Myfloat, 1)
         minute *= 60

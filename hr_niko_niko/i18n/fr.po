@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 06:51+0000\n"
-"PO-Revision-Date: 2021-05-14 06:51+0000\n"
+"POT-Creation-Date: 2021-05-16 15:23+0000\n"
+"PO-Revision-Date: 2021-05-16 15:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__active
 msgid "Active"
 msgstr ""
-
-#. module: hr_niko_niko
-#: model:hr.niko.niko,name:hr_niko_niko.hr_niko_niko_angry
-msgid "Angry"
-msgstr "En colère"
 
 #. module: hr_niko_niko
 #: model:ir.model,name:hr_niko_niko.model_hr_attendance
@@ -38,27 +33,32 @@ msgstr "Cliquez pour définir une nouvelle humeur de niko-niko "
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__display_name
 msgid "Display Name"
-msgstr "Nom"
+msgstr "Nom à afficher"
 
 #. module: hr_niko_niko
 #: model:ir.model,name:hr_niko_niko.model_hr_employee
 msgid "Employee"
-msgstr ""
+msgstr "Employé"
 
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_resource_calendar__start_time
 msgid "From"
 msgstr "De"
+
+#. module: hr_niko_niko
+#: model:hr.niko.niko,name:hr_niko_niko.hr_niko_niko_frown
+msgid "Frown"
+msgstr "Froncer"
 
 #. module: hr_niko_niko
 #: model:ir.model,name:hr_niko_niko.model_hr_niko_niko
@@ -73,7 +73,7 @@ msgstr ""
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__icon
 msgid "Icon"
-msgstr ""
+msgstr "Icone"
 
 #. module: hr_niko_niko
 #: model_terms:ir.ui.view,arch_db:hr_niko_niko.hr_niko_niko_view_filter
@@ -83,7 +83,7 @@ msgstr "Humeur informée"
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko____last_update
 msgid "Last Modified on"
-msgstr "Dernière Modification le"
+msgstr "Dernière modification le"
 
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__write_uid
@@ -93,7 +93,7 @@ msgstr "Dernière mise à jour par"
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: hr_niko_niko
 #: model_terms:ir.ui.view,arch_db:hr_niko_niko.hr_niko_niko_view_filter
@@ -103,7 +103,7 @@ msgstr "Humeur"
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__name
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: hr_niko_niko
 #: model_terms:ir.ui.view,arch_db:hr_niko_niko.resource_calendar_with_niko_niko_interval_form
@@ -151,7 +151,7 @@ msgstr "Temps"
 #. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_resource_calendar__end_time
 msgid "To"
-msgstr "A"
+msgstr "Vers"
 
 #. module: hr_niko_niko
 #: model:ir.actions.act_window,name:hr_niko_niko.action_hr_niko_niko

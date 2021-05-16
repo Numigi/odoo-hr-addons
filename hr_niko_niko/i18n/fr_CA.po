@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-14 06:46+0000\n"
-"PO-Revision-Date: 2021-05-14 06:46+0000\n"
+"POT-Creation-Date: 2021-05-16 15:25+0000\n"
+"PO-Revision-Date: 2021-05-16 15:25+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__active
 msgid "Active"
 msgstr "Actif"
-
-#. module: hr_niko_niko
-#: model:hr.niko.niko,name:hr_niko_niko.hr_niko_niko_angry
-msgid "Angry"
-msgstr "En colère"
 
 #. module: hr_niko_niko
 #: model:ir.model,name:hr_niko_niko.model_hr_attendance
@@ -56,14 +51,14 @@ msgid "Employee"
 msgstr "Employé"
 
 #. module: hr_niko_niko
-#: model:ir.model.fields,help:hr_niko_niko.field_hr_niko_niko__icon
-msgid "Font Awesome code of the icon that will represent the niko-niko mood. See https://fontawesome.com/icons?d=gallery."
-msgstr ""
-
-#. module: hr_niko_niko
 #: model:ir.model.fields,field_description:hr_niko_niko.field_resource_calendar__start_time
 msgid "From"
 msgstr "De"
+
+#. module: hr_niko_niko
+#: model:hr.niko.niko,name:hr_niko_niko.hr_niko_niko_frown
+msgid "Frown"
+msgstr "Froncer"
 
 #. module: hr_niko_niko
 #: model:ir.model,name:hr_niko_niko.model_hr_niko_niko
