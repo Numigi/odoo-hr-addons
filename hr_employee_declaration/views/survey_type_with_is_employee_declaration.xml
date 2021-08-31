@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="survey_type_form_with_is_employee_declaration" model="ir.ui.view">
+        <field name="name">Survey Type: Add is_employee_declaration</field>
+        <field name="model">survey.type</field>
+        <field name="inherit_id" ref="survey_type.view_survey_type_form"/>
+        <field name="arch" type="xml">
+            <field name="active" position="before">
+                <field name="is_employee_declaration"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

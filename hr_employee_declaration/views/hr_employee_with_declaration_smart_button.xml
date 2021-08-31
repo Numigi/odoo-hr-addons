@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="action_employee_declarations" model="ir.actions.act_window">
+        <field name="name">Declarations</field>
+        <field name="res_model">survey.user_input</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="view_id" ref="survey.survey_user_input_tree"></field>
+        <field name="search_view_id" ref="survey.survey_user_input_search"/>
+        <field name="domain">[
+            '|',
+            ('declaration_employee_id', '=', context.get('active_id')),
+            '&amp;',
+            ('declaration_employee_id', '=', False),
+            ('partner_id.user_ids.employee_ids', '=', context.get('active_id')),
+        ]</field>
+    </record>
+
+    <record id="employee_form_with_declaration_smart_button" model="ir.ui.view">
+        <field name="name">Employee Form: Add Declarations Smart Button</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    class="oe_stat_button" type="action" name="%(action_employee_declarations)d"
+                    icon="fa-clock-o" groups="hr.group_hr_manager"
+                >
+                    <field string="Declarations" name="declaration_count" widget="statinfo"/>
+                </button>
+            </div>
+        </field>
+    </record>
+
+</odoo>

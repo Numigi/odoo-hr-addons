@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="employee_form_with_declaration_settings" model="ir.ui.view">
+        <field name="name">Employee Form: Add Settings For Employee Declarations</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Declarations" groups="hr.group_hr_manager">
+                    <group>
+                        <group>
+                            <field name="declaration_survey_id" string="Survey"
+                                   domain="[('type_id.is_employee_declaration', '=', True)]"
+                                   attrs="{'required': [('periodic_declaration', '=', True)]}"/>
+                            <field name="declaration_recipient_id" string="Send To"/>
+                        </group>
+                    </group>
+                    <group string="Periodicity">
+                        <group>
+                            <field name="periodic_declaration"/>
+                            <field name="declaration_next_date" attrs="{
+                                'invisible': [('periodic_declaration', '=', False)],
+                                'required': [('periodic_declaration', '=', True)],
+                            }"/>
+                            <field name="declaration_periodicity" string="Repeat Every" attrs="{
+                                'invisible': [('periodic_declaration', '=', False)],
+                                'required': [('periodic_declaration', '=', True)],
+                            }"/>
+                        </group>
+                        <group>
+                            <field name="declaration_mail_template_id"
+                                   domain="[('model', '=', 'survey.user_input')]"
+                                   attrs="{
+                                        'invisible': [('periodic_declaration', '=', False)],
+                                        'required': [('periodic_declaration', '=', True)],
+                                    }"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+</odoo>

@@ -3,3 +3,13 @@
   includes:
     - base_extended_security
     - private_data_group
+
+- url: https://github.com/Numigi/odoo-survey-addons
+  branch: "12.0"
+  includes:
+    - survey_type
+
+- url: https://github.com/oca/queue
+  branch: "12.0"
+  includes:
+    - queue_job
