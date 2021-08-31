@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="survey_type_employee_declaration" model="survey.type">
+        <field name="name">Employee Declaration</field>
+        <field name="is_employee_declaration" eval="True"/>
+    </record>
+
+</odoo>
