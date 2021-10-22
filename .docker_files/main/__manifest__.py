@@ -22,6 +22,7 @@
         "hr_expense_same_month",  # TA#18858
         "hr_payslip_chatter",  # TA#24250
         "hr_working_space",  # TA#3896
+        "resource_calendar_hours_per_week",
     ],
     "installable": True,
 }

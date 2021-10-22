@@ -24,6 +24,7 @@ COPY hr_event /mnt/extra-addons/hr_event
 COPY hr_expense_same_month /mnt/extra-addons/hr_expense_same_month
 COPY hr_payslip_chatter /mnt/extra-addons/hr_payslip_chatter
 COPY hr_working_space /mnt/extra-addons/hr_working_space
+COPY resource_calendar_hours_per_week /mnt/extra-addons/resource_calendar_hours_per_week
 
 COPY .docker_files/main /mnt/extra-addons/main
 COPY .docker_files/odoo.conf /etc/odoo
