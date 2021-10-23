@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hr_contract_wage_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021 - today-10-17 14:29+0000\n"
+"PO-Revision-Date: 2021 - today-10-17 10:30-0400\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: hr_contract_wage_type
+#: model:ir.model,name:hr_contract_wage_type.model_hr_contract
+msgid "Contract"
+msgstr ""
+
+#. module: hr_contract_wage_type
+#: selection:hr.contract,wage_type:0
+msgid "Hour"
+msgstr "Heure"
+
+#. module: hr_contract_wage_type
+#: selection:hr.contract,wage_type:0
+msgid "Month"
+msgstr "Mois"
+
+#. module: hr_contract_wage_type
+#: model:ir.model.fields,field_description:hr_contract_wage_type.field_hr_contract__wage_type
+msgid "Wage Type"
+msgstr "Type de salaire"
+
+#. module: hr_contract_wage_type
+#: selection:hr.contract,wage_type:0
+msgid "Year"
+msgstr "Année"
