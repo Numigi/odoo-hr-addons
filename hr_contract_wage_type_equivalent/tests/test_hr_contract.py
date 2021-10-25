@@ -41,5 +41,5 @@ class TestContract(SavepointCase):
     def test_monthly_equivalent_wage(self):
         self.contract.wage_type = "month"
         self.contract.wage = 1800
-        assert self.contract.equivalent_wage == 10.38  # 1800 * 12 / (40 * 52)
+        assert round(self.contract.equivalent_wage, 2) == 10.38  # 1800 * 12 / (40 * 52)
         assert self.contract.equivalent_wage_type == "hour"

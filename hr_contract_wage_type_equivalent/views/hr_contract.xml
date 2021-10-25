@@ -7,10 +7,11 @@
         <field name="inherit_id" ref="hr_contract_wage_type.hr_contract_form_with_wage_type"/>
         <field name="arch" type="xml">
             <div name="wage" position="after">
+                <label for="equivalent_wage"/>
                 <div class="o_row" name="equivalent_wage">
                     <field name="equivalent_wage" nolabel="1"/>
                     <span>/</span>
-                    <field name="equivalent_wage_type" nolabel="1" required="1"/>
+                    <field name="equivalent_wage_type" nolabel="1"/>
                 </div>
             </div>
         </field>

@@ -33,5 +33,8 @@ class Contract(models.Model):
         elif self.wage_type == "year":
             return self.wage / (self._get_hours_per_week() * 52)
 
+        elif self.wage_type == "month":
+            return self.wage * 12 / (self._get_hours_per_week() * 52)
+
     def _get_hours_per_week(self):
         return self.resource_calendar_id.hours_per_week or 0
