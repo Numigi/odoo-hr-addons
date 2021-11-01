@@ -13,6 +13,7 @@
     "depends": [
         "hr_attendance_menu_unrestricted",
         "hr_contract_single_open",
+        "hr_contract_wage_type",
         "hr_contract_wage_type",  # TA#3893
         "hr_employee_declaration",
         "hr_employee_private_wizard",
@@ -22,7 +23,6 @@
         "hr_expense_same_month",  # TA#18858
         "hr_payslip_chatter",  # TA#24250
         "hr_working_space",  # TA#3896
-        "resource_calendar_hours_per_week",
     ],
     "installable": True,
 }

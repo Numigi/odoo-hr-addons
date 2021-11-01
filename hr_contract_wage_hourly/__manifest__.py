@@ -2,18 +2,18 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
-    "name": "Resource Calendar Hours Per Week",
+    "name": "HR Contract Wage Hourly",
     "version": "1.0.0",
     "author": "Numigi",
     "maintainer": "Numigi",
     "license": "LGPL-3",
     "category": "Human Resources",
-    "summary": "Add hours per week on working schedules",
+    "summary": "Add the hourly wage on contracts",
     "depends": [
-        "resource",
+        "hr_contract",
     ],
     "data": [
-        "views/resource_calendar.xml",
+        "views/hr_contract.xml",
     ],
     "installable": True,
 }
