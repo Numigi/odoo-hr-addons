@@ -8,7 +8,7 @@ from odoo.osv.expression import OR
 
 class Partner(models.Model):
 
-    _inherit = 'res.partner'
+    _inherit = "res.partner"
 
     employee_type = fields.Selection(
         [
@@ -21,10 +21,28 @@ class Partner(models.Model):
         domain = super().get_private_address_access_domain()
 
         if self.env.user.has_internal_employee_access():
-            domain = OR((domain, [("employee_type", "=", "internal")]))
+            domain = OR(
+                (
+                    domain,
+                    [
+                        "|",
+                        ("employee_type", "=", False),
+                        ("employee_type", "=", "internal"),
+                    ],
+                )
+            )
 
         if self.env.user.has_external_employee_access():
-            domain = OR((domain, [("employee_type", "=", "external")]))
+            domain = OR(
+                (
+                    domain,
+                    [
+                        "|",
+                        ("employee_type", "=", False),
+                        ("employee_type", "=", "external"),
+                    ],
+                )
+            )
 
         return domain
 
