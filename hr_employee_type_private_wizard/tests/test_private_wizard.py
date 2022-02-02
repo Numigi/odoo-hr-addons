@@ -112,6 +112,21 @@ class TestPrivateWizard(SavepointCase):
         self.employee.ttype = "external"
         assert self.employee_address not in self._search_partners()
 
+    def test_search_normal_partner__with_private_data_group(self):
+        self.user.groups_id |= self.group_private_data
+        partners = self._search_partners()
+        assert self.user.partner_id in partners
+
+    def test_search_normal_partner__with_internal_group(self):
+        self.user.groups_id |= self.group_internal
+        partners = self._search_partners()
+        assert self.user.partner_id in partners
+
+    def test_search_normal_partner__with_external_group(self):
+        self.user.groups_id |= self.group_external
+        partners = self._search_partners()
+        assert self.user.partner_id in partners
+
     def _search_partners(self):
         domain = self.env["res.partner"].sudo(self.user).get_extended_security_domain()
         return self.env["res.partner"].search(domain)
