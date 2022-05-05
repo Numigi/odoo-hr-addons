@@ -10,7 +10,7 @@ class Project(models.Model):
     _inherit = "project.project"
 
     is_timesheet = fields.Boolean(
-        string="Has timesheets", compute="compute_is_timesheet", compute_sudo=True, store=True
+        string="Has timesheets", compute="_compute_is_timesheet", compute_sudo=True, store=True
     )
 
     @api.multi
