@@ -1,0 +1,149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_niko_niko
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0-20200629\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-16 19:01+0000\n"
+"PO-Revision-Date: 2022-05-16 19:01+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: hr_niko_niko
+#: model:ir.model,name:hr_niko_niko.model_hr_attendance
+msgid "Attendance"
+msgstr "Présence"
+
+#. module: hr_niko_niko
+#: model_terms:ir.actions.act_window,help:hr_niko_niko.action_hr_niko_nikos_form
+msgid "Click to define a new Mood of Niko."
+msgstr "Cliquez pour définir une nouvelle humeur de Niko."
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: hr_niko_niko
+#: model:ir.model,name:hr_niko_niko.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,help:hr_niko_niko.field_hr_niko_niko__icon
+msgid "Font Awesome code of the icon that will represent the working space. See https://fontawesome.com/icons?d=gallery."
+msgstr "Le code Font Awesome qui représentera l'espace de travail. Voir https://fontawesome.com/icons?d=gallery."
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_employee__niko_from
+#: model:ir.model.fields,field_description:hr_niko_niko.field_resource_calendar__niko_from
+msgid "From"
+msgstr "De"
+
+#. module: hr_niko_niko
+#: model:ir.model,name:hr_niko_niko.model_hr_niko_niko
+msgid "HR Niko Niko"
+msgstr "HR Niko Niko"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__id
+msgid "ID"
+msgstr "ID"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__icon
+msgid "Icon"
+msgstr "Icone"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_attendance__niko_niko_id
+msgid "Mood"
+msgstr "Humeur"
+
+#. module: hr_niko_niko
+#: model_terms:ir.ui.view,arch_db:hr_niko_niko.hr_niko_niko_view_filter
+msgid "Mood of Niko-Niko"
+msgstr "Humeur du niko-niko"
+
+#. module: hr_niko_niko
+#: model_terms:ir.ui.view,arch_db:hr_niko_niko.view_hr_niko_niko_form
+#: model_terms:ir.ui.view,arch_db:hr_niko_niko.view_hr_niko_niko_tree
+msgid "Moods"
+msgstr "Humeurs"
+
+#. module: hr_niko_niko
+#: model:ir.actions.act_window,name:hr_niko_niko.action_hr_niko_nikos_form
+#: model:ir.ui.menu,name:hr_niko_niko.menu_action_warehouse_form
+msgid "Moods of Niko-Niko"
+msgstr "Humeurs du niko-niko"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_employee__niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_resource_calendar__niko_niko
+msgid "Request the Niko Niko"
+msgstr "Demander le niko-niko"
+
+#. module: hr_niko_niko
+#: model:ir.model,name:hr_niko_niko.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "Temps de travail de la ressource"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_niko_niko__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: hr_niko_niko
+#. openerp-web
+#: code:addons/hr_niko_niko/static/src/xml/niko_attendance.xml:13
+#, python-format
+msgid "Sign out"
+msgstr "Pointer la sortie"
+
+#. module: hr_niko_niko
+#: model:ir.model.fields,field_description:hr_niko_niko.field_hr_employee__niko_to
+#: model:ir.model.fields,field_description:hr_niko_niko.field_resource_calendar__niko_to
+msgid "To"
+msgstr "A"
+

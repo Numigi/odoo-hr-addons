@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+
+    <t t-extend="HrAttendanceMyMainMenu">
+        <xpath t-jquery="a.fa-sign-out" t-operation="replace">
+            <t t-set="niko_niko" t-value="widget.niko_niko"/>
+            <t t-foreach="widget.nikos" t-as="niko" t-if="checked_in and niko_niko">
+                <i t-att-id="niko.id"
+                   t-att-title="niko.name"
+                   t-att-class="niko.icon + ' fa-3x fa o_hr_niko_niko_sign_out o_hr_niko_icon'"/>
+            </t>
+            
+            <a class="fa fa-7x o_hr_attendance_sign_in_out_icon fa-sign-out btn-warning" t-if="checked_in and !niko_niko" aria-label="Sign out" title="Sign out"/>
+        </xpath>
+    </t>
+
+</template>
