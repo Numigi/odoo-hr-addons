@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "author": "Hind Numigi",
     "maintainer": "Numigi",
-    "license": "LGPL-3",
+    "license": "AGPL-3",
     "category": "Other",
     "summary": "Specify a Niko-niko",
     "depends": [

@@ -8,6 +8,7 @@ class HRAttendanceWithNikoNiko(models.Model):
 
     _name = "hr.niko.niko"
     _description = "HR Niko Niko"
+    _order = 'sequence'
 
     active = fields.Boolean(string="Active", default=True)
     name = fields.Char(string="Name", required=True)
