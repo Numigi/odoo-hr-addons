@@ -1,0 +1,8 @@
+<odoo>
+    <template id="assets_backend" name="hr_niko_attendance assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/hr_niko_niko/static/src/js/niko_my_attendances.js"></script>
+            <link rel="stylesheet" href="/hr_niko_niko/static/src/css/hr_niko_style.css"/>
+        </xpath>
+    </template>
+</odoo>

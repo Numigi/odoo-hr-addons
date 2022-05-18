@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+        <!-- tree model -->
+    <record id="hr_niko_view_tree" model="ir.ui.view">
+      <field name="name">hr.niko.view.tree</field>
+      <field name="model">hr.niko</field>
+      <field name="arch" type="xml">
+        <tree string="List Mood">
+          <field name="name"/>
+          <field name="icon"/>
+          <field name="active"/>
+        </tree>
+      </field>
+    </record>
+    <!-- form mode -->
+
+    <record id="hr_niko_view_form" model="ir.ui.view">
+      <field name="name">hr.niko.view.form</field>
+      <field name="model">hr.niko</field>
+      <field name="arch" type="xml">
+        <form string="Mood">
+          <sheet>
+            <h1>
+              <field name="name"/>
+            </h1>
+            <group>
+              <field name="icon"/>
+              <field name="active"/>
+              <field name="sequence"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+<!-- action -->
+    <record id="hr_niko_action" model="ir.actions.act_window">
+      <field name="name">Moods</field>
+      <field name="res_model">hr.niko</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+<!-- menu item -->
+    <menuitem
+      id="hr_niko_menu"
+      name="Mood Of Niko"
+      action="hr_niko_action"
+      parent="hr_attendance.menu_hr_attendance_manage_attendances"
+      sequence="50"/>
+  </data>
+</odoo>

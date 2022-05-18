@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+      <record id="hr_attendance_inherit_form" model="ir.ui.view">
+          <field name="name">hr.attendance.inherit.form</field>
+          <field name="model">hr.attendance</field>
+          <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form" />
+          <field name="arch" type="xml">
+              <field name="employee_id" position="after">
+                  <field name="niko_id"/>
+              </field>
+          </field>
+      </record>
+      
+      <record id="hr_attendance_niko_search_inherit" model="ir.ui.view">
+          <field name="name">hr.attendance.inherit.search</field>
+          <field name="model">hr.attendance</field>
+          <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+          <field name="arch" type="xml">
+              <field name="department_id" position="after">
+                  <field name="niko_id"/>
+              </field>
+              <xpath expr="//filter[@name='nocheckout']" position="after">
+                <filter string="informed Mood" name="mood_register" domain="[('niko_id','!=',False)]"/>
+              </xpath>
+              <xpath expr="//group/filter[@name='groupby_check_out']" position="after">
+                  <filter name="groupby_niko_id" string="Mood" context="{'group_by': 'niko_id'}"/>
+              </xpath>
+          </field>
+      </record>
+    </data>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+
+    <t t-extend="HrAttendanceMyMainMenu">
+        <xpath t-jquery="a.fa-sign-out" t-operation="replace">
+            <t t-if="widget.timeniko">
+                <t t-foreach="widget.moods" t-as="mood" t-if="checked_in">
+                    <i t-att-id="mood.id"
+                    t-att-title="mood.name"
+                    t-att-class="mood.icon + ' fa-3x far o_hr_niko_sign_out btn-secondary  o_hr_niko_attendance_icon'"/>
+                </t>
+            </t>
+            <t t-if="!widget.timeniko">
+                <a class="fa fa-7x o_hr_attendance_sign_in_out_icon fa-sign-out btn-warning" t-if="checked_in" aria-label="Sign out" title="Sign out"/>
+            </t>
+        </xpath>
+    </t>
+</template>

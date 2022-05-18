@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+         <record id="resource_calendar_inherit_form" model="ir.ui.view">
+             <field name="name">resource_calendar_inherit.form</field>
+             <field name="model">resource.calendar</field>
+             <field name="inherit_id" ref="resource.resource_calendar_form" />
+             <field name="arch" type="xml">
+                 <xpath expr="//notebook" position="after">
+                     <group  string="Nik-niko">
+                         <field name="ask_niko"/>
+                         <field name="begin_time" widget="float_time" 
+                         attrs="{'required': [('ask_niko','=',True)]}" 
+                         />
+                         <field name="end_time" widget="float_time"  attrs="{'required': [('ask_niko','=',True)]}"/>
+                     </group>
+                 </xpath>
+             </field>
+         </record>
+        
+        <record id="hr_employee_form_inherit" model="ir.ui.view">
+            <field name="name">hr.inherit.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_attendance.view_employee_form_inherit_hr_attendance" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='manual_attendance']" position="after">
+
+                    <field name="niko_time"/>    
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
