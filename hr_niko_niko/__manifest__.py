@@ -13,7 +13,6 @@
         "views/hr_niko_views.xml",
         "views/resource_views.xml",
         "views/hr_attendance_views.xml",
-        "views/hr_employee_views.xml",
         "views/hr_niko_templates.xml",
     ],
     "qweb": [

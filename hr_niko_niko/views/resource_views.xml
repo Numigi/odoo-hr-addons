@@ -17,17 +17,5 @@
                  </xpath>
              </field>
          </record>
-        
-        <record id="hr_employee_form_inherit" model="ir.ui.view">
-            <field name="name">hr.inherit.form</field>
-            <field name="model">hr.employee</field>
-            <field name="inherit_id" ref="hr_attendance.view_employee_form_inherit_hr_attendance" />
-            <field name="arch" type="xml">
-                <xpath expr="//field[@name='manual_attendance']" position="after">
-
-                    <field name="niko_time"/>    
-                </xpath>
-            </field>
-        </record>
     </data>
 </odoo>
