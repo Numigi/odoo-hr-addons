@@ -40,7 +40,6 @@
         <field name="name">Working Spaces</field>
         <field name="res_model">hr.working.space</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="view_type">form</field>
         <field name="view_id" ref="view_hr_working_space_tree"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
