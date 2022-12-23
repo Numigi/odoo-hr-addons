@@ -12,6 +12,7 @@
     "summary": "Install all addons required for testing.",
     "depends": [
         "hr_attendance_menu_unrestricted",
+        "hr_attendance_reason_kiosk_mode",  # TA#46091
         "hr_attendance_tracking_visibility",
         "hr_contract_single_open",
         "hr_contract_wage_type",

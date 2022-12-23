@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+    <t t-extend="HrAttendanceKioskMode">
+        <t t-jquery=".o_hr_attendance_kiosk_welcome_row" t-operation="before">
+            <div class="row o_hr_attendance_kiosk_reason_row">
+                <t t-if="widget.attendance_reasons">
+                    Attendance Reason
+                    <select class="o_hr_attendance_reasons" multiple="multiple">
+                        <option/>
+                        <t t-foreach="widget.attendance_reasons" t-as="reason">
+                            <option t-att-value="reason.id">
+                                <t t-esc="reason.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </t>
+            </div>
+        </t>
+    </t>
+</template>
