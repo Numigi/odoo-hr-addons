@@ -25,6 +25,7 @@
         "hr_expense_same_month",  # TA#18858
         "hr_payslip_chatter",  # TA#24250
         "hr_working_space",  # TA#3896
+        "hr_timesheet_time_control_stop_at_checkout",  # TA#46133
     ],
     "installable": True,
 }
