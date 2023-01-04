@@ -37,6 +37,6 @@ class TestHrTimesheetTimeControlStop(common.TransactionCase):
 
     def test_stop_timer_at_checkout(self):
         """At checkout test if the timer is stopped"""
-        assert self.employee.attendance_state == 'checked_in'
+        self.assertEqual(self.employee.attendance_state, 'checked_in')
         self.employee.attendance_action_change()
-        assert self.line.unit_amount != 0.0
+        self.assertNotEqual(self.line.unit_amount, 0.0)
