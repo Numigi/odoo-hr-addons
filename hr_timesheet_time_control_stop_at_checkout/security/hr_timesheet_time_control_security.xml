@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_can_stop_timer" model="res.groups">
+        <field name="name">Can Stop Timer</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+        <field name="comment">The user can see and use the button stop timer.</field>
+    </record>
+
+</odoo>

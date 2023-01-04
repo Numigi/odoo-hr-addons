@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--    Hide Button End Work in projects views-->
+    <record id="view_project_kanban_inherited" model="ir.ui.view">
+        <field name="name">project.project.kanban.inherited</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.view_project_kanban_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//a[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_project_form_inherited" model="ir.ui.view">
+        <field name="name">project.project.form.inherited</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.project_invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+        </field>
+    </record>
+
+<!--    Hide Button End Work in tasks views-->
+    <record id="view_task_list_inherited" model="ir.ui.view">
+        <field name="name">project.task.list.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.view_task_tree2_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_kanban_inherited" model="ir.ui.view">
+        <field name="name">project.task.kanban.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//a[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_form_inherited" model="ir.ui.view">
+        <field name="name">project.task.form.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.view_task_form2_inherited"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+            <xpath expr="//field[@name='timesheet_ids']//a[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+            <xpath expr="//field[@name='timesheet_ids']//tree//button[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+            <xpath expr="//field[@name='timesheet_ids']//form//button[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+        </field>
+    </record>
+
+<!--    Hide Button End Work in Timesheets views-->
+    <record id="view_task_list_inherited" model="ir.ui.view">
+        <field name="name">timesheet.list.inherited</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.account_analytic_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_timesheet_kanban_inherited" model="ir.ui.view">
+        <field name="name">timesheet.kanban.inherited</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.view_kanban_account_analytic_line"/>
+        <field name="arch" type="xml">
+            <xpath expr="//a[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
