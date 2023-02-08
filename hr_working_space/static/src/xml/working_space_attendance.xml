@@ -3,10 +3,12 @@
 
     <t t-extend="HrAttendanceMyMainMenu">
         <xpath t-jquery="a.fa-sign-in" t-operation="replace">
-            <t t-foreach="widget.workingSpaces" t-as="working_space" t-if="!checked_in">
-                <i t-att-id="working_space.id"
-                   t-att-title="working_space.name"
-                   t-att-class="working_space.icon + ' fa-3x fa o_hr_working_space_sign_in btn-primary o_hr_working_space_icon'"/>
+            <t t-if="widget.workingSpaces">
+                <t t-foreach="widget.workingSpaces" t-as="working_space" t-if="!checked_in">
+                    <i t-att-id="working_space.id"
+                       t-att-title="working_space.name"
+                       t-att-class="working_space.icon + ' fa-3x fa o_hr_working_space_sign_in btn-primary o_hr_working_space_icon'"/>
+                </t>
             </t>
         </xpath>
     </t>

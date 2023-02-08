@@ -10,7 +10,7 @@ odoo.define("hr_working_space.working_space_my_attendances", (require) => {
                 this.sign_in_with_working_space(event);
             },
         }),
-        start() {
+        willStart() {
             var def = this._rpc({
                 model: "hr.working.space",
                 method: "search_read",
