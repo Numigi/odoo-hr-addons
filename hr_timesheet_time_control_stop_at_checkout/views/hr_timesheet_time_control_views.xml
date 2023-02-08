@@ -23,6 +23,17 @@
         </field>
     </record>
 
+    <record id="view_project_list_inherited" model="ir.ui.view">
+        <field name="name">project.project.list.inherited</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project_timesheet_time_control.view_project_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_end_work']" position="attributes">
+                <attribute name="groups">hr_timesheet_time_control_stop_at_checkout.group_can_stop_timer</attribute>
+            </xpath>
+        </field>
+    </record>
+
 <!--    Hide Button End Work in tasks views-->
     <record id="view_task_list_inherited" model="ir.ui.view">
         <field name="name">project.task.list.inherited</field>
@@ -67,7 +78,7 @@
     </record>
 
 <!--    Hide Button End Work in Timesheets views-->
-    <record id="view_task_list_inherited" model="ir.ui.view">
+    <record id="view_timesheet_list_inherited" model="ir.ui.view">
         <field name="name">timesheet.list.inherited</field>
         <field name="model">account.analytic.line</field>
         <field name="inherit_id" ref="project_timesheet_time_control.account_analytic_line_tree"/>
