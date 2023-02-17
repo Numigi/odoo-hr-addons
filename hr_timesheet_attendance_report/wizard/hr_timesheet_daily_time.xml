@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="hr_timesheet_daily_time_view_form" model="ir.ui.view">
+            <field name="name">hr.timesheet.daily.time.view.form</field>
+            <field name="model">hr.timesheet.daily.time</field>
+            <field name="arch" type="xml">
+                <form string="Daily time report">
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="date" widget="date"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="generate_report" string="Generate Report" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_daily_time_action" model="ir.actions.act_window">
+            <field name="name">Daily time report</field>
+            <field name="res_model">hr.timesheet.daily.time</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_timesheet_daily_time_view_form"/>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="timesheet_attendance_report_menu"
+            name="Daily time report"
+            parent="hr_timesheet.menu_timesheets_reports"
+            action="hr_timesheet_daily_time_action"
+            sequence="100"/>
+    </data>
+</odoo>
