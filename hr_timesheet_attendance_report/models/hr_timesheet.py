@@ -15,7 +15,10 @@ class AccountAnalyticLine(models.Model):
                                   "and hours of each timesheet line")
 
     @api.multi
-    @api.depends('date_time', 'employee_id', 'unit_amount')
+    @api.depends('date_time', 'employee_id', 'unit_amount',
+                 'employee_id.attendance_ids',
+                 'employee_id.attendance_ids.check_in',
+                 'employee_id.attendance_ids.check_out')
     def _get_attendance(self):
         for record in self:
             domain = [
@@ -26,11 +29,19 @@ class AccountAnalyticLine(models.Model):
             ]
             attendance = self.env['hr.attendance'].search(domain, limit=1)
             if attendance:
-                day = attendance.check_in.date()
-                from_time = attendance.check_in.strftime('%H:%M')
-                to_time = attendance.check_out.strftime('%H:%M')
+                check_in_tz = fields.Datetime.context_timestamp(
+                    attendance,
+                    fields.Datetime.from_string(attendance.check_in)
+                )
+                check_out_tz = fields.Datetime.context_timestamp(
+                    attendance,
+                    fields.Datetime.from_string(attendance.check_out)
+                )
+                day = check_in_tz.date()
+                from_time = check_in_tz.strftime('%H:%M')
+                to_time = check_out_tz.strftime('%H:%M')
                 duration = _('{}').format(
-                    attendance.check_out - attendance.check_in
+                    check_out_tz - check_in_tz
                 )[0:-3]
                 record.attendance = _('Attendance: %s from %s to %s - %s'
                                       % (day, from_time, to_time,
