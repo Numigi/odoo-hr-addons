@@ -57,7 +57,7 @@ msgstr "Temps Journalier"
 #: model:ir.actions.act_window,name:hr_timesheet_attendance_report.hr_timesheet_daily_time_action
 #: model:ir.ui.menu,name:hr_timesheet_attendance_report.timesheet_attendance_report_menu
 #: model_terms:ir.ui.view,arch_db:hr_timesheet_attendance_report.hr_timesheet_daily_time_view_form
-msgid "Daily time report"
+msgid "Daily Time Report"
 msgstr "Rapport de temps journalier"
 
 #. module: hr_timesheet_attendance_report

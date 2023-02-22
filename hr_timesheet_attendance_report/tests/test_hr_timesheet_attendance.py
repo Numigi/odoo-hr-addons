@@ -70,6 +70,6 @@ class TestAccountAnalytic(SavepointCase):
         )
 
     def test_compute_attendance(self):
-        assert self.analytic_line.attendance
-        assert self.analytic_line.attendance == \
-               'Attendance: 2023-02-16 from 08:05 to 12:13 - 4:08'
+        self.assertTrue(self.analytic_line.attendance)
+        self.assertEqual(self.analytic_line.attendance,
+                         'Attendance: 2023-02-16 from 08:05 to 12:13 - 4:08')
