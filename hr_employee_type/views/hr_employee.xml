@@ -56,14 +56,14 @@
     <menuitem
             id="menu_employee_internal"
             name="Internal Employee"
-            parent="hr.menu_open_view_employee_list_my"
+            parent="hr.menu_hr_employee_payroll"
             action="action_employee_internal"
             sequence="100"
     />
     <menuitem
             id="menu_employee_external"
             name="External Employee"
-            parent="hr.menu_open_view_employee_list_my"
+            parent="hr.menu_hr_employee_payroll"
             action="action_employee_external"
             sequence="200"
     />

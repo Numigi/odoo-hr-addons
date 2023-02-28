@@ -3,13 +3,14 @@
 
 {
     'name': 'HR Payslip Chatter',
-    'version': '1.0.0',
+    'version': "14.0.1.0.0",
     'author': 'Numigi',
     'maintainer': 'Numigi',
+    "website": "https://www.numigi.com",
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'summary': 'This module adds a chatter in payslip form view.',
-    'depends': ['hr_payroll', 'mail'],
+    'depends': ['hr_payroll_period', 'mail'],
     "data": [
         "views/hr_payslip.xml",
     ],
