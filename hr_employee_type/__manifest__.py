@@ -2,19 +2,22 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
-    "name": "HR Attendance Menu Unrestricted",
-    "version": "1.0.0",
+    "name": "HR Employee Type",
+    "version": "14.0.1.0.0",
     "author": "Numigi",
     "maintainer": "Numigi",
+    "website": "https://www.numigi.com",
     "license": "LGPL-3",
     "category": "Human Resources",
-    "summary": "Add attendance menus to employees",
+    "summary": "Add a type on employee",
     "depends": [
-        "hr_attendance",
+        "hr",
     ],
     "data": [
-        "views/menu.xml",
-        "security/ir_rule.xml",
+        "views/hr_employee.xml",
+    ],
+    "demo": [
+        "demo/hr_employee.xml",
     ],
     "installable": True,
 }

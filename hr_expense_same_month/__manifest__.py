@@ -3,9 +3,10 @@
 
 {
     'name': 'HR Expense Same Month',
-    'version': '1.0.0',
+    'version': "14.0.1.0.0",
     'author': 'Numigi',
     'maintainer': 'Numigi',
+    "website": "https://www.numigi.com",
     'license': 'LGPL-3',
     'category': 'Human Resources',
     'summary': 'Force all the expense of a sheet to be for the same month',

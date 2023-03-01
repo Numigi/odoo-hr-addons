@@ -34,7 +34,8 @@ class TestContract(SavepointCase):
         self.contract.copy({'state': 'open', 'active': True})
 
     def test_if_other_contract_not_active__error_not_raised(self):
-        self.contract.copy({'state': 'open', 'active': False})
+        self.contract.copy({'state': 'draft', 'active': False})
+        self.contract.state = 'open'
 
     def test_if_other_contract_has_different_employee__error_not_raised(self):
         self.contract.copy({

@@ -3,7 +3,7 @@ HR Contract Wage Hourly
 
 This module adds the hourly wage on contracts.
 
-.. image:: static/description/contract.png
+.. image:: static/description/contracts_wage_hourly.png
 
 Contributors
 ------------
