@@ -3,9 +3,10 @@
 
 {
     "name": "HR Employee Private Wizard",
-    "version": "1.0.0",
+    "version": "14.0.1.0.0",
     "author": "Numigi",
     "maintainer": "Numigi",
+    "website": "https://bit.ly/numigi-com",
     "license": "LGPL-3",
     "category": "Human Resources",
     "summary": "Add a type on employee",

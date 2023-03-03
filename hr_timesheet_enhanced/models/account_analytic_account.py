@@ -8,7 +8,6 @@ class AccountAnalyticAccount(models.Model):
 
     _inherit = "account.analytic.account"
 
-    @api.multi
     def unlink(self):
         context = dict(self.env.context or {})
         self -= self.with_context(active_test=False).filtered(

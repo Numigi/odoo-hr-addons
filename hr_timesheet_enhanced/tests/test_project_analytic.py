@@ -14,7 +14,7 @@ class TestAccountAnalytic(SavepointCase):
             {
                 "name": "Customer Task",
                 "email": "customer@task.com",
-                "customer": True,
+                # "customer": True,
             }
         )
 
@@ -94,7 +94,9 @@ class TestAccountAnalytic(SavepointCase):
 
     def test_not_unlink_account_lines_unlink_project(self):
         self.project_2.unlink()
+        self.task.timesheet_ids.write({'task_id': False})
         self.task.unlink()
+        self.project.timesheet_ids.write({'project_id': False})
         self.project.unlink()
         assert len(self.analytic_account) == 1
 

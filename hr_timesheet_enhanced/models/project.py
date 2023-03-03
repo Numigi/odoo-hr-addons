@@ -10,14 +10,9 @@ class Project(models.Model):
     _inherit = "project.project"
 
     is_timesheet = fields.Boolean(
-<<<<<<< TA#43968
         string="Has timesheets", compute="_compute_is_timesheet", compute_sudo=True, store=True
-=======
-        string="Has timesheets", compute="compute_is_timesheet", compute_sudo=True, store=True
->>>>>>> 12.0
     )
 
-    @api.multi
     @api.depends(
         "tasks",
         "tasks.project_id",
@@ -37,7 +32,6 @@ class Project(models.Model):
                 lambda line: line.project_id & project
             )
 
-    @api.multi
     def write(self, vals):
         if "analytic_account_id" in vals:
             self._account_analytic_change()
@@ -48,7 +42,6 @@ class Project(models.Model):
 
         return res
 
-    @api.multi
     def _account_analytic_change(self):
         for project in self.filtered(
             lambda project: project.is_timesheet and project.analytic_account_id
@@ -61,7 +54,6 @@ class Project(models.Model):
                 )
             )
 
-    @api.multi
     def _account_analytic_change_active(self, vals):
 
         if vals["active"]:
@@ -72,6 +64,5 @@ class Project(models.Model):
                 lambda account: not account.line_ids and not account.project_ids
             ).write({"active": False})
 
-    @api.multi
     def unlink(self):
         return super(Project, self.with_context(delete_project=True)).unlink()

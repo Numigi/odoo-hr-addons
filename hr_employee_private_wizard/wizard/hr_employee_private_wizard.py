@@ -22,7 +22,6 @@ class EmployeePrivateWizard(models.TransientModel):
     def save_and_close(self):
         return {'type': 'ir.actions.act_window_close'}
 
-    @api.multi
     def read(self, fields=None, load="_classic_read"):
         if self._context.get("read_wizard_data"):
             return super().read(fields, load)
@@ -37,7 +36,6 @@ class EmployeePrivateWizard(models.TransientModel):
             .employee_id
         )
 
-    @api.multi
     def write(self, vals):
         self._get_employee().write(vals)
         return {"type": "ir.actions.act_window_close"}
@@ -74,7 +72,7 @@ class EmployeePrivateWizard(models.TransientModel):
         return footer
 
     def _user_has_edit_access(self):
-        employee = self._get_employee().sudo(self.env.user)
+        employee = self._get_employee().with_user(self.env.user)
         return employee.check_access_rights("write", False)
 
     def _remove_non_private_arch_nodes(self, tree):
