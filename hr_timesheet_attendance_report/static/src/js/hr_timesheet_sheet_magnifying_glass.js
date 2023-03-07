@@ -14,11 +14,14 @@ odoo.define('hr_timesheet_attendance_report', function (require) {
 
         _renderFooter: function () {
             var $footer = this._super.apply(this, arguments);
-            var $magnif_glass = this._renderMagnifyingGlass();
-            if ($magnif_glass) {
-                var $tr = $('<tr>').append('<td/>').append($magnif_glass);
-                return $footer.append($tr);
+            if (this.getParent().model === 'hr_timesheet.sheet') {
+                var $magnif_glass = this._renderMagnifyingGlass();
+                if ($magnif_glass) {
+                    var $tr = $('<tr>').append('<td/>').append($magnif_glass);
+                    return $footer.append($tr);
+                }
             }
+            return $footer;
         },
 
 
