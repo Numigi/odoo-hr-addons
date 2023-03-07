@@ -7,12 +7,10 @@ Dependencies
 ------------
 
 * https://github.com/OCA/project/project_timesheet_time_control
-
-To have field `date_time` in Timesheets Lines
+  To have field `date_time` in Timesheets Lines
 
 * https://github.com/OCA/timesheet/tree/12.0/hr_timesheet_sheet
-
-To have Timesheets by period
+  To have Timesheets by period
 
 Context
 -------
