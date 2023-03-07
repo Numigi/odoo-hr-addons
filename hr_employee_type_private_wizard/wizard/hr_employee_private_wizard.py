@@ -1,4 +1,4 @@
-# © 2020 - Today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 - Today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import models, _
@@ -7,7 +7,14 @@ from odoo.exceptions import AccessError
 
 class EmployeePrivateWizard(models.TransientModel):
 
-    _inherit = "hr.employee.private.wizard"
+    _name = "hr.employee.private.wizard"
+    _inherit = ["hr.employee.private.wizard", "mail.thread.cc", "mail.activity.mixin"]
+
+    def _message_get_suggested_recipients(self):
+        recipients = super(
+            EmployeePrivateWizard, self
+        )._message_get_suggested_recipients()
+        return recipients
 
     def check_extended_security_all(self):
         for wizard in self:
@@ -33,7 +40,7 @@ class EmployeePrivateWizard(models.TransientModel):
 
     def check_extended_security_write(self):
         super().check_extended_security_write()
-        employee = self._get_employee().sudo(self.env.user)
+        employee = self._get_employee().with_user(self.env.user)
         employee.check_extended_security_write()
         employee.check_access_rights("write")
         employee.check_access_rule("write")

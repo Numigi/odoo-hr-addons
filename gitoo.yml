@@ -1,9 +1,16 @@
-# - url: https://github.com/Numigi/odoo-base-addons
-#   branch: "14.0"
-#   includes:
-#     - base_extended_security
-#     - private_data_group
-#
+- url: https://github.com/Numigi/odoo-base-addons
+  branch: "14.0"
+  includes:
+    - base_extended_security
+    - private_data_group
+    - test_http_request
+
+- url: https://github.com/Numigi/odoo-project-addons
+  branch: "14.0"
+  includes:
+    - account_analytic_enhanced
+    - project_enhanced
+
 # - url: https://github.com/Numigi/odoo-survey-addons
 #   branch: "14.0"
 #   includes:
@@ -24,3 +31,8 @@
   branch: "14.0"
   includes:
     - date_range
+
+- url: https://github.com/oca/server-tools
+  branch: "14.0"
+  includes:
+    - base_view_inheritance_extension

@@ -1,4 +1,4 @@
-# © 2020 - Today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 - Today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 import pytest
@@ -11,14 +11,6 @@ class TestPrivateWizard(SavepointCase):
     def setUpClass(cls):
         super().setUpClass()
 
-        cls.user = cls.env["res.users"].create(
-            {
-                "name": "test@example.com",
-                "login": "test@example.com",
-                "email": "test@example.com",
-                "groups_id": [(4, cls.env.ref("hr.group_hr_user").id),],
-            }
-        )
         cls.group_internal = cls.env.ref(
             "hr_employee_type_private_wizard.group_internal"
         )
@@ -27,6 +19,17 @@ class TestPrivateWizard(SavepointCase):
         )
         cls.group_private_data = cls.env.ref(
             "private_data_group.group_private_data"
+        )
+
+        cls.user = cls.env["res.users"].create(
+            {
+                "name": "test@example.com",
+                "login": "test@example.com",
+                "email": "test@example.com",
+                "groups_id": [
+                    (4, cls.env.ref("hr.group_hr_user").id),
+                    ],
+            }
         )
 
         cls.employee_address = cls.env["res.partner"].create(
@@ -41,29 +44,44 @@ class TestPrivateWizard(SavepointCase):
             }
         )
 
-        cls.employee_address = cls.employee_address.sudo(cls.user)
-        cls.wizard = (
-            cls.env["hr.employee.private.wizard"]
-            .sudo(cls.user)
-            .create({"employee_id": cls.employee.id})
-        )
+        cls.employee_address = cls.employee_address.with_user(cls.user)
 
     def test_access_internal_employee__with_internal_group(self):
         self.user.groups_id |= self.group_internal
+        self.wizard = (
+            self.env["hr.employee.private.wizard"]
+            .with_user(self.user)
+            .create({"employee_id": self.employee.id})
+        )
         self.wizard.check_extended_security_all()
 
     def test_access_internal_employee__with_external_group(self):
         self.user.groups_id |= self.group_external
+        self.wizard = (
+            self.env["hr.employee.private.wizard"]
+            .with_user(self.user)
+            .create({"employee_id": self.employee.id})
+        )
         with pytest.raises(AccessError):
             self.wizard.check_extended_security_all()
 
     def test_access_external_employee__with_external_group(self):
         self.user.groups_id |= self.group_external
+        self.wizard = (
+            self.env["hr.employee.private.wizard"]
+            .with_user(self.user)
+            .create({"employee_id": self.employee.id})
+        )
         self.employee.ttype = "external"
         self.wizard.check_extended_security_all()
 
     def test_access_external_employee__with_internal_group(self):
         self.user.groups_id |= self.group_internal
+        self.wizard = (
+            self.env["hr.employee.private.wizard"]
+            .with_user(self.user)
+            .create({"employee_id": self.employee.id})
+        )
         self.employee.ttype = "external"
         with pytest.raises(AccessError):
             self.wizard.check_extended_security_all()
@@ -71,6 +89,11 @@ class TestPrivateWizard(SavepointCase):
     def test_access_in_write_mode__without_write_access_to_employee(self):
         self.user.groups_id |= self.group_internal | self.group_external
         self.user.groups_id -= self.env.ref("hr.group_hr_user")
+        self.wizard = (
+            self.env["hr.employee.private.wizard"]
+            .with_user(self.user)
+            .create({"employee_id": self.employee.id})
+        )
         with pytest.raises(AccessError):
             self.wizard.check_extended_security_write()
 
@@ -128,15 +151,15 @@ class TestPrivateWizard(SavepointCase):
         assert self.user.partner_id in partners
 
     def _search_partners(self):
-        domain = self.env["res.partner"].sudo(self.user).get_extended_security_domain()
+        domain = self.env["res.partner"].with_user(self.user).get_extended_security_domain()
         return self.env["res.partner"].search(domain)
 
     def test_external_group__can_not_change_employee_type(self):
         self.user.groups_id |= self.group_external
         with pytest.raises(AccessError):
-            self.employee.sudo(self.user).ttype = "external"
+            self.employee.with_user(self.user).ttype = "external"
 
     def test_private_data_group__can_change_employee_type(self):
         self.user.groups_id |= self.group_private_data
-        self.employee.sudo(self.user).ttype = "external"
+        self.employee.with_user(self.user).ttype = "external"
         assert self.employee.ttype == "external"

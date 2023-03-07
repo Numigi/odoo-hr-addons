@@ -22,7 +22,7 @@ COPY hr_contract_wage_type /mnt/extra-addons/hr_contract_wage_type
 COPY hr_employee_private_wizard /mnt/extra-addons/hr_employee_private_wizard
 COPY hr_employee_type /mnt/extra-addons/hr_employee_type
 COPY hr_timesheet_enhanced /mnt/extra-addons/hr_timesheet_enhanced
-#COPY hr_employee_type_private_wizard /mnt/extra-addons/hr_employee_type_private_wizard
+COPY hr_employee_type_private_wizard /mnt/extra-addons/hr_employee_type_private_wizard
 COPY hr_event /mnt/extra-addons/hr_event
 COPY hr_expense_same_month /mnt/extra-addons/hr_expense_same_month
 COPY hr_payslip_chatter /mnt/extra-addons/hr_payslip_chatter
