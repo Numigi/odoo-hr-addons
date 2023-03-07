@@ -5,12 +5,11 @@ Hr Timesheet Attendance Report
 
 Dependencies
 ------------
-
-* https://github.com/OCA/project/project_timesheet_time_control
+* `Project timesheet time control <https://github.com/OCA/project/tree/12.0/project_timesheet_time_control>`_
   To have field `date_time` in Timesheets Lines
 
-* https://github.com/OCA/timesheet/tree/12.0/hr_timesheet_sheet
-  To have Timesheets by period
+* `HR Timesheet Sheet <https://github.com/OCA/timesheet/tree/12.0/hr_timesheet_sheet>`_
+  To have Timesheet sheets views.
 
 Context
 -------
