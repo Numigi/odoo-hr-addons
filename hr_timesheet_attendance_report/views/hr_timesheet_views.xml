@@ -28,7 +28,7 @@
                     <field name="attendance"/>
                 </field>
                 <filter name="groupby_date" position="after">
-                    <filter string="Attendance" name="groupby_attendance" domain="[]" context="{'group_by':'attendance'}" help="Timesheet by Attendance"/>
+                    <filter string="Attendance" name="groupby_attendance" context="{'group_by':'attendance'}" help="Timesheet by Attendance"/>
                 </filter>
             </field>
         </record>
