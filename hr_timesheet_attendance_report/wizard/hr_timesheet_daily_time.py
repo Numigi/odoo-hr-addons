@@ -25,9 +25,9 @@ class HrTimesheetDailyTime(models.TransientModel):
             ]
             if self.date:
                 date_from = self.date.replace(
-                    hour=0, minute=0, second=0, microsecond=0)
+                    hour=0, minute=0, second=0)
                 date_to = self.date.replace(
-                    hour=23, minute=59, second=59, microsecond=59)
+                    hour=23, minute=59, second=59)
                 domain += [('date_time', '>=', date_from),
                            ('date_time', '<=', date_to)]
             action['domain'] = domain

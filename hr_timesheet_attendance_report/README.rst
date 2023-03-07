@@ -6,15 +6,21 @@ Hr Timesheet Attendance Report
 Dependencies
 ------------
 
-https://github.com/OCA/project/project_timesheet_time_control
+* https://github.com/OCA/project/project_timesheet_time_control
 
 To have field `date_time` in Timesheets Lines
+
+* https://github.com/OCA/timesheet/tree/12.0/hr_timesheet_sheet
+
+To have Timesheets by period
 
 Context
 -------
 
 The module allows you to have visibility on the same view of the detail of the attendance
 and time entries of each employee grouped by attendance.
+
+It adds a search icon in the Timesheet sheet to access to the daily report of time entries grouped by attendance.
 
 Description
 -----------
@@ -33,6 +39,18 @@ The report is grouped by `Attendance`.
 The duration is added to the group to compare it with Timesheets durations.
 
 .. image:: static/description/daily_time_report.png
+
+
+As member of `Timesheets / User`, I go to `Timesheets > My Timesheet Sheets`.
+
+I click on an open sheet, then I can see a search icon added in the footer of `Summary` tab.
+
+.. image:: static/description/timesheet_sheet_search_icon.png
+
+I click on the icon of a column, I will redirected to the `Daily Time Report filtered by the selected day.
+
+.. image:: static/description/timesheet_sheet_daily_report.png
+
 
 Contributors
 ------------

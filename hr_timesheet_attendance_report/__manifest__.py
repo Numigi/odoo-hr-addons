@@ -14,8 +14,10 @@
         "hr_timesheet",
         "hr_attendance",
         "project_timesheet_time_control",
+        "hr_timesheet_sheet",
     ],
     "data": [
+        'views/assets.xml',
         'views/hr_timesheet_views.xml',
         'wizard/hr_timesheet_daily_time.xml'
     ],
