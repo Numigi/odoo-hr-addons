@@ -4,7 +4,7 @@
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from itertools import chain
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class HrEmployeeWithDeclarationEmailCron(models.Model):
@@ -28,7 +28,8 @@ class HrEmployeeWithDeclarationEmailCron(models.Model):
             ('method_name', '=', 'send_declaration_survey_by_email'),
             ('state', '!=', 'done'),
         ])
-        employee_ids_with_active_jobs = list(chain(*active_jobs.mapped('record_ids')))
+        employee_ids_with_active_jobs = list(chain(
+            *active_jobs.mapped('record_ids')))
 
         employees_with_declarations_to_send = self.search([
             ('declaration_next_date', '<=', today),

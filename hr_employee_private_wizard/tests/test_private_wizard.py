@@ -1,4 +1,4 @@
-# © 2020 - Today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from lxml import etree
@@ -13,11 +13,11 @@ class TestPrivateWizard(SavepointCase):
         cls.gender = "female"
 
         cls.employee = cls.env["hr.employee"].create(
-            {"name": "My Employee", "gender": cls.gender,}
+            {"name": "My Employee", "gender": cls.gender}
         )
 
         cls.wizard = cls.env["hr.employee.private.wizard"].create(
-            {"employee_id": cls.employee.id,}
+            {"employee_id": cls.employee.id}
         )
 
     def test_private_field_in_fields_view_get(self):

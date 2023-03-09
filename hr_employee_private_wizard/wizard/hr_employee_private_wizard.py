@@ -1,4 +1,4 @@
-# © 2020 - Today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 - Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from lxml import etree
@@ -79,7 +79,8 @@ class EmployeePrivateWizard(models.TransientModel):
         private_fields = (
             self.env["ir.private.field"]
             .sudo()
-            .search([("model_id", "=", self.env.ref("hr.model_hr_employee").id),])
+            .search([
+                ("model_id", "=", self.env.ref("hr.model_hr_employee").id)])
         )
         field_names_to_include = set(private_fields.mapped("field_id.name"))
         field_names_to_include |= {"name"}
