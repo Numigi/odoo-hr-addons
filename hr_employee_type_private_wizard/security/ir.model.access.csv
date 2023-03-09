@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_private_wizard,hr.employee.private.wizard,model_hr_employee_private_wizard,private_data_group.group_private_data,1,1,1,0
+access_external_hr_employee_private_wizard,external.hr.employee.private.wizard,model_hr_employee_private_wizard,hr_employee_type_private_wizard.group_external,1,1,1,0
+access_internal_hr_employee_private_wizard,internal.hr.employee.private.wizard,model_hr_employee_private_wizard,hr_employee_type_private_wizard.group_internal,1,1,1,0

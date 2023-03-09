@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="demo_mail_template" model="mail.template">
+        <field name="name">Employee Annual Declaration</field>
+        <field name="model_id" ref="survey.model_survey_user_input"/>
+        <field name="subject">Annual Declaration for ${object.declaration_employee_id.name}</field>
+        <field name="partner_to">${object.partner_id.id}</field>
+        <field name="body_html">
+            <![CDATA[
+<p>Hello ${object.partner_id.name},</p>
+<p>Here is the link to complete the annual declaration for ${object.declaration_employee_id.name}.</p>
+<p><a style="margin-left: 85px; padding:5px 10px; border-radius: 3px; background-color:#875A7B; text-align:center; text-decoration:none; color:#F7FBFD;" href="__URL__">Please, click here to start survey</a></p>
+<p>Thank you</p>
+            ]]>
+        </field>
+    </record>
+
+    <record id="demo_survey" model="survey.survey">
+        <field name="title">Employee Annual Declaration</field>
+        <field name="state">open</field>
+        <field name="users_can_go_back" eval="True"/>
+        <field name="type_id" ref="survey_type_employee_declaration"/>
+    </record>
+
+    <record id="demo_page_1" model="survey.question">
+        <field name="title">Relation with Management</field>
+        <field name="is_page">True</field>
+        <field name="survey_id" ref="demo_survey"/>
+        <field name="sequence">1</field>
+        <field name="question_type" eval="False"/>
+        <field name="description" type="html">
+            <p>.Relation with Management</p>
+        </field>
+    </record>
+
+    <record id="demo_question_1_1" model="survey.question">
+        <!--        <field name="page_id" ref="demo_page_1"/>-->
+        <field name="sequence">1</field>
+        <field name="title">Have you encountered any issue with your manager</field>
+        <field name="question_type">char_box</field>
+    </record>
+
+</odoo>
