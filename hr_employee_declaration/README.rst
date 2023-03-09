@@ -7,7 +7,7 @@ New Survey Type
 ---------------
 A new survey type `Employee Declaration` is added.
 
-.. image:: static/description/survey_type.png
+.. image:: hr_employee_declaration/static/description/survey_type.png
 
 Declarations Tab
 ----------------
@@ -15,27 +15,27 @@ A new tab `Declarations` is added in the employee form view.
 
 This tab contains a few fields related to the configuration of the annual declaration.
 
-.. image:: static/description/employee_declaration_tab.png
+.. image:: hr_employee_declaration/static/description/employee_declaration_tab.png
 
 Survey
 ~~~~~~
 This field is used to select the survey that will be sent for the declaration.
 Only surveys of type `Employee Declaration` can be selected.
 
-.. image:: static/description/employee_survey_field.png
+.. image:: hr_employee_declaration/static/description/employee_survey_field.png
 
 Send To
 ~~~~~~~
 This field contains the recipient of the survey.
 If not filled, the survey is sent to the employee himself.
 
-.. image:: static/description/employee_send_to_field.png
+.. image:: hr_employee_declaration/static/description/employee_send_to_field.png
 
 Periodic Declarations
 ~~~~~~~~~~~~~~~~~~~~~
 A boolean field `Periodic Declarations` is added.
 
-.. image:: static/description/employee_periodic_declaration_field.png
+.. image:: hr_employee_declaration/static/description/employee_periodic_declaration_field.png
 
 When checked, the following 2 fields become visible:
 
@@ -50,11 +50,11 @@ Declaration Email Template
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 This field is used to select the email template to use for sending the survey.
 
-.. image:: static/description/employee_email_template_field.png
+.. image:: hr_employee_declaration/static/description/employee_email_template_field.png
 
 Here is an example of valid email for the employee declaration.
 
-.. image:: static/description/mail_template_example.png
+.. image:: hr_employee_declaration/static/description/mail_template_example.png
 
 * Applies to: `Survey User Input` (survey.user_input)
 * Subject: Annual Declaration for ${object.declaration_employee_id.name}
@@ -70,11 +70,11 @@ Here is an example of valid email for the employee declaration.
 
 The body must contain a button with `__URL__` as URL.
 
-.. image:: static/description/mail_template_url_button.png
+.. image:: hr_employee_declaration/static/description/mail_template_url_button.png
 
 In the `Email Configuration` tab, the field `To (Partners)` must contain `${object.partner_id.id}`.
 
-.. image:: static/description/mail_template_partner_to.png
+.. image:: hr_employee_declaration/static/description/mail_template_partner_to.png
 
 Contributors
 ------------

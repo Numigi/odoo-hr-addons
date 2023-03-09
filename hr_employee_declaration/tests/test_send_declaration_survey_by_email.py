@@ -1,4 +1,4 @@
-# © 2018 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo.exceptions import ValidationError
@@ -12,6 +12,8 @@ class TestSendDeclarationSurveyByEmail(common.SavepointCase):
         super().setUpClass()
         cls.survey = cls.env.ref('hr_employee_declaration.demo_survey')
         cls.mail_template = cls.env.ref('hr_employee_declaration.demo_mail_template')
+        print('----------------------------------cls.mail_template')
+        print(cls.mail_template)
         cls.mail_template.auto_delete = False
         cls.employee_user = cls.env['res.users'].create({
             'name': 'Employee',
@@ -77,9 +79,9 @@ class TestSendDeclarationSurveyByEmail(common.SavepointCase):
             ('partner_ids', '=', self.employee_user.partner_id.id),
         ], limit=1, order='id desc')
 
-        assert self.employee.declaration_ids.token
-        assert self.employee.declaration_ids.token in mail.body
-        assert self.employee.declaration_ids.token in mail.body_html
+        assert self.employee.declaration_ids.access_token
+        assert self.employee.declaration_ids.access_token in mail.body
+        assert self.employee.declaration_ids.access_token in mail.body_html
 
     def test_mako_fields_are_converted_in_body(self):
         self.employee.send_declaration_survey_by_email()
@@ -91,11 +93,10 @@ class TestSendDeclarationSurveyByEmail(common.SavepointCase):
         assert self.employee.display_name in mail.body
 
     def test_mako_fields_are_converted_in_subject(self):
-        self.employee.declaration_recipient_id = self.manager
+        self.employee.declaration_recipient_id = self.manager.id
         self.employee.send_declaration_survey_by_email()
 
         mail = self.env['mail.mail'].search([
-            ('partner_ids', '=', self.manager_user.partner_id.id),
+            ('partner_ids', '=', self.manager.user_id.partner_id.id),
         ], limit=1, order='id desc')
-
-        assert self.manager.display_name in mail.subject
+        assert self.employee.display_name in mail.subject

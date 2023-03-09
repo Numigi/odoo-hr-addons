@@ -15,7 +15,7 @@
         "hr_attendance_tracking_visibility",
         "hr_contract_single_open",
         "hr_contract_wage_type",  # TA#3893
-        # "hr_employee_declaration",
+        "hr_employee_declaration",
         "hr_employee_private_wizard",
         "hr_employee_type",  # TA#15755
         "hr_employee_type_private_wizard",

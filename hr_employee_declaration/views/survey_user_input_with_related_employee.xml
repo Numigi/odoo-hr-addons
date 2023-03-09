@@ -4,7 +4,7 @@
     <record id="survey_user_input_form_with_related_employee" model="ir.ui.view">
         <field name="name">Survey Answer: Add Related Employee</field>
         <field name="model">survey.user_input</field>
-        <field name="inherit_id" ref="survey.survey_user_input_form"/>
+        <field name="inherit_id" ref="survey.survey_user_input_view_form"/>
         <field name="arch" type="xml">
             <field name="partner_id" position="after">
                 <field name="is_employee_declaration" invisible="1"/>

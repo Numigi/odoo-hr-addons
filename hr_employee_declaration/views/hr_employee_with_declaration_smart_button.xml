@@ -5,8 +5,8 @@
         <field name="name">Declarations</field>
         <field name="res_model">survey.user_input</field>
         <field name="view_mode">tree,kanban,form</field>
-        <field name="view_id" ref="survey.survey_user_input_tree"></field>
-        <field name="search_view_id" ref="survey.survey_user_input_search"/>
+        <field name="view_id" ref="survey.survey_user_input_view_tree"></field>
+        <field name="search_view_id" ref="survey.survey_user_input_view_search"/>
         <field name="domain">[
             '|',
             ('declaration_employee_id', '=', context.get('active_id')),

@@ -11,10 +11,10 @@
     - account_analytic_enhanced
     - project_enhanced
 
-# - url: https://github.com/Numigi/odoo-survey-addons
-#   branch: "14.0"
-#   includes:
-#     - survey_type
+- url: https://github.com/Numigi/odoo-survey-addons
+  branch: "14.0"
+  includes:
+    - survey_type
 
 - url: https://github.com/oca/queue
   branch: "14.0"

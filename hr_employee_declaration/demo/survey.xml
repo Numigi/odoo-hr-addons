@@ -18,23 +18,27 @@
 
     <record id="demo_survey" model="survey.survey">
         <field name="title">Employee Annual Declaration</field>
-        <field name="stage_id" ref="survey.stage_in_progress"/>
-        <field name="auth_required" eval="True"/>
+        <field name="state">open</field>
         <field name="users_can_go_back" eval="True"/>
         <field name="type_id" ref="survey_type_employee_declaration"/>
     </record>
 
-    <record id="demo_page_1" model="survey.page">
+    <record id="demo_page_1" model="survey.question">
         <field name="title">Relation with Management</field>
+        <field name="is_page">True</field>
         <field name="survey_id" ref="demo_survey"/>
         <field name="sequence">1</field>
+        <field name="question_type" eval="False"/>
+        <field name="description" type="html">
+            <p>.Relation with Management</p>
+        </field>
     </record>
 
     <record id="demo_question_1_1" model="survey.question">
-        <field name="page_id" ref="demo_page_1"/>
+        <!--        <field name="page_id" ref="demo_page_1"/>-->
         <field name="sequence">1</field>
-        <field name="question">Have you encountered any issue with your manager</field>
-        <field name="type">free_text</field>
+        <field name="title">Have you encountered any issue with your manager</field>
+        <field name="question_type">char_box</field>
     </record>
 
 </odoo>

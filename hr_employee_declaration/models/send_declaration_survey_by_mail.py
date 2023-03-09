@@ -1,25 +1,15 @@
-# © 2018 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 import uuid
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
-from itertools import chain
-from odoo import api, fields, models, _
-from odoo.addons.queue_job.job import job
+
+import werkzeug
+from odoo import fields, models, _
 from odoo.exceptions import ValidationError
-from odoo.tools import pycompat
 
 
-class HrEmployee(models.Model):
-
+class HrEmployeeWithSendDeclarations(models.Model):
     _inherit = 'hr.employee'
-
-    declaration_ids = fields.One2many(
-        'survey.user_input', string='Declarations',
-        compute='_compute_declaration_ids')
-
-    declaration_count = fields.Integer(compute='_compute_declaration_count')
 
     declaration_survey_id = fields.Many2one(
         'survey.survey', 'Declaration Survey', ondelete='restrict')
@@ -28,48 +18,6 @@ class HrEmployee(models.Model):
     declaration_mail_template_id = fields.Many2one(
         'mail.template', 'Declaration Email Template', ondelete='restrict')
 
-    periodic_declaration = fields.Boolean()
-    declaration_next_date = fields.Date('Next Declaration Date')
-    declaration_periodicity = fields.Selection([
-        ('month', 'Month'),
-        ('year', 'Year'),
-    ])
-
-    def _compute_declaration_ids(self):
-        for employee in self:
-            employee.declaration_ids = self.env['survey.user_input'].search([
-                '|',
-                ('declaration_employee_id', '=', employee.id),
-                '&',
-                ('declaration_employee_id', '=', False),
-                ('partner_id.user_ids.employee_ids', '=', employee.id),
-            ])
-
-    def _compute_declaration_count(self):
-        for employee in self:
-            employee.declaration_count = len(employee.declaration_ids)
-
-    @api.multi
-    def send_due_declaration_surveys_by_email(self):
-        """Send every due employee declarations by email."""
-        today = fields.Date.to_string(datetime.now())
-
-        active_jobs = self.env['queue.job'].search([
-            ('model_name', '=', 'hr.employee'),
-            ('method_name', '=', 'send_declaration_survey_by_email'),
-            ('state', '!=', 'done'),
-        ])
-        employee_ids_with_active_jobs = list(chain(*active_jobs.mapped('record_ids')))
-
-        employees_with_declarations_to_send = self.search([
-            ('declaration_next_date', '<=', today),
-            ('id', 'not in', employee_ids_with_active_jobs),
-        ])
-
-        for employee in employees_with_declarations_to_send:
-            employee.with_delay().send_declaration_survey_by_email()
-
-    @job
     def send_declaration_survey_by_email(self):
         """Send the declaration by email to a single employee.
 
@@ -93,11 +41,9 @@ class HrEmployee(models.Model):
                 'partner_ids': [(4, user_input.partner_id.id)],
             })
 
-        if self.periodic_declaration:
-            self._compute_declaration_next_date()
-
     def _add_token_to_declaration_body(self, body, user_input):
-        url_with_token = '{}/{}'.format(user_input.survey_id.public_url, user_input.token)
+        url_with_token = '%s?%s' % (user_input.survey_id.get_start_url(), werkzeug.urls.url_encode(
+            {'answer_token': user_input and user_input.access_token or None}))
 
         if '__URL__' not in body:
             raise ValidationError(_(
@@ -108,15 +54,13 @@ class HrEmployee(models.Model):
         return body.replace('__URL__', url_with_token)
 
     def _generate_declaration_survey_user_input(self):
-        token = pycompat.text_type(uuid.uuid4())
+        token = str(uuid.uuid4())
         recipient = self._get_declaration_recipient()
         survey = self._get_declaration_survey()
         user_input = self.env['survey.user_input'].create({
             'survey_id': survey.id,
-            'date_create': fields.Datetime.now(),
-            'type': 'link',
             'state': 'new',
-            'token': token,
+            'access_token': token,
             'partner_id': recipient.id,
             'email': recipient.email,
             'declaration_employee_id': self.id,
@@ -171,11 +115,3 @@ class HrEmployee(models.Model):
             'employee': self,
             'recipient': self._get_declaration_recipient(),
         }
-
-    def _compute_declaration_next_date(self):
-        previous_date = fields.Date.from_string(self.declaration_next_date)
-        delta = (
-            relativedelta(months=1) if self.declaration_periodicity == 'month'
-            else relativedelta(years=1)
-        )
-        self.declaration_next_date = previous_date + delta

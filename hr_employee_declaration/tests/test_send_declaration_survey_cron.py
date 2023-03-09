@@ -1,10 +1,10 @@
-# © 2018 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from ddt import data, ddt
 from datetime import datetime, timedelta
+
 from dateutil.relativedelta import relativedelta
-from odoo import fields
+from ddt import data, ddt
 from odoo.tests import common
 
 
