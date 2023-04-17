@@ -52,7 +52,9 @@ class TestHrLeave(common.SavepointCase):
         leave_form.holiday_status_id = self.leave_type
         leave_form.request_date_from = "2021-01-02"
         leave_form.request_date_to = "2021-01-05"
-        self.assertEquals(leave_form.number_of_days, 4.0)
+        self.assertEquals(leave_form.number_of_days, 2.0)
+        # this do not include by default why we use 2.0
+        # saturday and sunday (resource.resource_calendar_std)
 
     def test_hr_leave_day(self):
         leave_form = Form(
