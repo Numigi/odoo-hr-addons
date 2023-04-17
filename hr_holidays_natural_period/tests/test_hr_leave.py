@@ -19,17 +19,6 @@ class TestHrLeave(common.SavepointCase):
         )
         calendar = cls.env.ref("resource.resource_calendar_std")
         calendar = calendar.copy({"name": "Test calendar"})
-        # calendar.switch_calendar_type() # TODO: This function is not on v12
-        # calendar.attendance_ids.filtered(
-        #     lambda x: x.day_period == "afternoon"
-        #     # and x.week_type == "0"  # TODO: This function is not on v12
-        #     # and not x.display_type  # TODO: This function is not on v12
-        # ).unlink()
-        # calendar.attendance_ids.filtered(
-        #     lambda x: x.day_period == "morning"
-        #     # and not x.display_type  # TODO: This function is not on v12
-        #     # and x.week_type == "1"  # TODO: This function is not on v12
-        # ).unlink()
         partner = cls.env["res.partner"].create(
             {
                 "name": "Test employee",
@@ -50,8 +39,8 @@ class TestHrLeave(common.SavepointCase):
             self.HrLeave.with_context(default_employee_id=self.employee.id,)
         )
         leave_form.holiday_status_id = self.leave_type
-        leave_form.request_date_from = "2021-01-02"
-        leave_form.request_date_to = "2021-01-05"
+        leave_form.request_date_from = "2021-01-02"  # Saturday
+        leave_form.request_date_to = "2021-01-05"  # Monday
         self.assertEquals(leave_form.number_of_days, 2.0)
         # this do not include by default why we use 2.0
         # saturday and sunday (resource.resource_calendar_std)
