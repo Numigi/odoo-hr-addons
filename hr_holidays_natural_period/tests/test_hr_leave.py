@@ -20,14 +20,14 @@ class TestHrLeave(common.SavepointCase):
         calendar = calendar.copy({"name": "Test calendar"})
         # calendar.switch_calendar_type() # TODO: This function is not on v12
         calendar.attendance_ids.filtered(
-            lambda x: x.week_type == "0"
-            and not x.display_type
-            and x.day_period == "afternoon"
+            lambda x: x.day_period == "afternoon"
+            # and x.week_type == "0"  # TODO: This function is not on v12
+            # and not x.display_type  # TODO: This function is not on v12
         ).unlink()
         calendar.attendance_ids.filtered(
-            lambda x: x.week_type == "1"
-            and not x.display_type
-            and x.day_period == "morning"
+            lambda x: x.day_period == "morning"
+            # and not x.display_type  # TODO: This function is not on v12
+            # and x.week_type == "1"  # TODO: This function is not on v12
         ).unlink()
         partner = cls.env["res.partner"].create(
             {
