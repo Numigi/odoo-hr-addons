@@ -14,21 +14,22 @@ class TestHrLeave(common.SavepointCase):
                 "name": "Test partner",
                 "request_unit": "natural_day",
                 "responsible_id": cls.env.ref("base.user_admin").id,
+                "validity_start": "2021-01-01",
             }
         )
         calendar = cls.env.ref("resource.resource_calendar_std")
         calendar = calendar.copy({"name": "Test calendar"})
         # calendar.switch_calendar_type() # TODO: This function is not on v12
-        calendar.attendance_ids.filtered(
-            lambda x: x.day_period == "afternoon"
-            # and x.week_type == "0"  # TODO: This function is not on v12
-            # and not x.display_type  # TODO: This function is not on v12
-        ).unlink()
-        calendar.attendance_ids.filtered(
-            lambda x: x.day_period == "morning"
-            # and not x.display_type  # TODO: This function is not on v12
-            # and x.week_type == "1"  # TODO: This function is not on v12
-        ).unlink()
+        # calendar.attendance_ids.filtered(
+        #     lambda x: x.day_period == "afternoon"
+        #     # and x.week_type == "0"  # TODO: This function is not on v12
+        #     # and not x.display_type  # TODO: This function is not on v12
+        # ).unlink()
+        # calendar.attendance_ids.filtered(
+        #     lambda x: x.day_period == "morning"
+        #     # and not x.display_type  # TODO: This function is not on v12
+        #     # and x.week_type == "1"  # TODO: This function is not on v12
+        # ).unlink()
         partner = cls.env["res.partner"].create(
             {
                 "name": "Test employee",
