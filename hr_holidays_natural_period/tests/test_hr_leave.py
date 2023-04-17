@@ -18,7 +18,7 @@ class TestHrLeave(common.SavepointCase):
         )
         calendar = cls.env.ref("resource.resource_calendar_std")
         calendar = calendar.copy({"name": "Test calendar"})
-        calendar.switch_calendar_type()
+        # calendar.switch_calendar_type() # TODO: This function is not on v12
         calendar.attendance_ids.filtered(
             lambda x: x.week_type == "0"
             and not x.display_type
@@ -57,7 +57,8 @@ class TestHrLeave(common.SavepointCase):
         leave_form = Form(
             self.HrLeave.with_context(default_employee_id=self.employee.id,)
         )
-        leave_form.holiday_status_id = self.env.ref("hr_holidays.holiday_status_cl")
+        leave_form.holiday_status_id = self.env.ref(
+            "hr_holidays.holiday_status_cl")
         leave_form.request_date_from = "2021-01-02"  # Saturday
         leave_form.request_date_to = "2021-01-04"  # Monday
         self.assertEquals(leave_form.number_of_days, 1)
