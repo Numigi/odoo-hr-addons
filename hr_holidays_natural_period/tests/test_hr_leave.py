@@ -17,8 +17,14 @@ class TestHrLeave(common.SavepointCase):
                 "validity_start": "2021-01-01",
             }
         )
-        calendar = cls.env.ref("resource.resource_calendar_std")
-        calendar = calendar.copy({"name": "Test calendar"})
+        cls.calendar_std = cls.env.ref("resource.resource_calendar_std")
+        calendar = cls.calendar_std.copy({"name": "Test calendar"})
+        calendar.attendance_ids.filtered(
+            lambda x: x.day_period == "afternoon"
+        ).unlink()
+        calendar.attendance_ids.filtered(
+            lambda x: x.day_period == "morning"
+        ).unlink()
         partner = cls.env["res.partner"].create(
             {
                 "name": "Test employee",
@@ -40,14 +46,15 @@ class TestHrLeave(common.SavepointCase):
         )
         leave_form.holiday_status_id = self.leave_type
         leave_form.request_date_from = "2021-01-02"  # Saturday
-        leave_form.request_date_to = "2021-01-05"  # Monday
-        self.assertEquals(leave_form.number_of_days, 2.0)
-        # this do not include by default why we use 2.0
-        # saturday and sunday (resource.resource_calendar_std)
+        leave_form.request_date_to = "2021-01-05"  # Tuesday
+        self.assertEquals(leave_form.number_of_days, 4.0)
 
     def test_hr_leave_day(self):
+        self.employee.resource_calendar_id = self.calendar_std
+        self.employee.refresh()
+        employee = self.employee
         leave_form = Form(
-            self.HrLeave.with_context(default_employee_id=self.employee.id,)
+            self.HrLeave.with_context(default_employee_id=employee.id,)
         )
         leave_form.holiday_status_id = self.env.ref(
             "hr_holidays.holiday_status_cl")

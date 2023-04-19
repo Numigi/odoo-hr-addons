@@ -20,37 +20,32 @@ class ResourceCalendar(models.Model):
                 return True
         return False
 
-    def _natural_period_intervals_batch(self, start_dt, end_dt, intervals, resources):
-        for resource in resources or []:
-            interval_resource = intervals[resource.id]
-            tz = timezone(resource.tz)
-            attendances = []
-            if len(interval_resource._items) > 0:
-                attendances = interval_resource._items
-            for day in rrule.rrule(rrule.DAILY, dtstart=start_dt, until=end_dt):
-                exist_interval = self._exist_interval_in_date(
-                    attendances, day.date())
-                if not exist_interval:
-                    attendances.append(
-                        (
-                            datetime.combine(
-                                day.date(), time.min).replace(tzinfo=tz),
-                            datetime.combine(
-                                day.date(), time.max).replace(tzinfo=tz),
-                            self.env["resource.calendar.attendance"],
-                        )
+    def _natural_period_intervals(self, start_dt, end_dt, interval_resource, resource):
+        tz = timezone(resource.tz)
+        attendances = []
+        if len(interval_resource._items) > 0:
+            attendances = interval_resource._items
+        for day in rrule.rrule(rrule.DAILY, dtstart=start_dt, until=end_dt):
+            exist_interval = self._exist_interval_in_date(
+                attendances, day.date())
+            if not exist_interval:
+                attendances.append(
+                    (
+                        datetime.combine(
+                            day.date(), time.min).replace(tzinfo=tz),
+                        datetime.combine(
+                            day.date(), time.max).replace(tzinfo=tz),
+                        self.env["resource.calendar.attendance"],
                     )
-            intervals[resource.id] = Intervals(attendances)
-        return intervals
+                )
+        return Intervals(attendances)
 
-    def _attendance_intervals_batch(
-        self, start_dt, end_dt, resources=None, domain=None, tz=None
-    ):
-        res = super()._attendance_intervals_batch(
-            start_dt=start_dt, end_dt=end_dt, resources=resources, domain=domain, tz=tz
-        )
+    def _attendance_intervals(
+            self, start_dt, end_dt, resource=None):
+        res = super()._attendance_intervals(
+            start_dt=start_dt, end_dt=end_dt, resource=resource)
         if self.env.context.get("natural_period"):
-            return self._natural_period_intervals_batch(
-                start_dt, end_dt, res, resources
+            return self._natural_period_intervals(
+                start_dt, end_dt, res, resource
             )
         return res
