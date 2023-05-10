@@ -1,9 +1,11 @@
 # © 2023 - Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
+import logging
 
 from odoo import api, fields, models, _
 
+_logger = logging.getLogger(__name__)
 
 class AccountAnalyticLine(models.Model):
     _inherit = "account.analytic.line"
@@ -20,6 +22,14 @@ class AccountAnalyticLine(models.Model):
                  'employee_id.attendance_ids.check_in',
                  'employee_id.attendance_ids.check_out')
     def _get_attendance(self):
+        try:
+            with self._cr.savepoint():
+                self.env['hr.timesheet.switch']._transient_vacuum(force=True)
+            self._cr.commit()
+        except Exception as e:
+            _logger.warning("Failed to clean transient model "
+                            "'hr.timesheet.switch'\n%s", str(e))
+        self.clear_caches()
         for record in self:
             domain = [
                 ('employee_id', '=', record.employee_id.id),
