@@ -29,7 +29,6 @@ class AccountAnalyticLine(models.Model):
         except Exception as e:
             _logger.warning("Failed to clean transient model "
                             "'hr.timesheet.switch'\n%s", str(e))
-        self.clear_caches()
         for record in self:
             domain = [
                 ('employee_id', '=', record.employee_id.id),
