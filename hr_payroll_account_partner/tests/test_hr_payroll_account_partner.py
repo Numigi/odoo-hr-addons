@@ -21,19 +21,6 @@ class TestPayslip(PayrollPreparationToPayslipCase):
                 "journal_id": cls.journal.id,
             }
         )
-        cls.rule = cls.env.ref("hr_payroll.hr_rule_basic")
-        cls.rule.write(
-            {
-                "amount_select": "code",
-                "amount_python_compute": "result = entries.AAA",
-            }
-        )
-        cls.structure.rule_ids[0].write({
-            'account_debit': cls.account_debit.id,
-        })
-        cls.structure.rule_ids[1].write({
-            'account_credit': cls.account_credit.id,
-        })
 
     def test_00_move_lines_partner_application(self):
         """Check the correct conditioning on the application of the partner
@@ -48,12 +35,6 @@ class TestPayslip(PayrollPreparationToPayslipCase):
     def test_11_move_lines_partner_application(self):
         """Check the correct conditioning on the application of the partner
          in the lines of accounting entries from the payslip lines"""
-        self.rule.write(
-            {
-                "amount_select": "code",
-                "amount_python_compute": "result = entries.AAA",
-            }
-        )
         self.payslip.compute_sheet()
         self.payslip.line_ids.mapped('salary_rule_id').write({
             'register_id': self.register.id,
