@@ -9,10 +9,6 @@ class TestPayslip(PayrollPreparationToPayslipCase):
     def setUpClass(cls):
         super().setUpClass()
 
-        cls.amount_1 = 100
-        cls.entry_1.amount = cls.amount_1
-        cls.entry_1.code = "AAA"
-
         cls.payslip = cls.env["hr.payslip"].create(
             {
                 "employee_id": cls.employee.id,
@@ -25,7 +21,6 @@ class TestPayslip(PayrollPreparationToPayslipCase):
                 "journal_id": cls.journal.id,
             }
         )
-        cls.payslip.payroll_entry_ids = cls.entry_1 | cls.entry_2
         cls.rule = cls.env.ref("hr_payroll.hr_rule_basic")
         cls.rule.write(
             {

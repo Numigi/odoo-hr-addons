@@ -40,9 +40,6 @@ class PayrollPreparationToPayslipCase(SavepointCase):
         cls.date_start = datetime.now().date()
         cls.date_end = cls.date_start + timedelta(30)
 
-        cls.entry_1 = cls._create_entry(cls.date_start)
-        cls.entry_2 = cls._create_entry(cls.date_end)
-
         cls.account_debit = cls.env["account.account"].create({
             "name": "Account Debit",
             "code": 210110,
@@ -69,7 +66,31 @@ class PayrollPreparationToPayslipCase(SavepointCase):
             }
         )
 
-        cls.structure = cls.env.ref("hr_payroll.structure_base")
+        cls.structure = \
+            cls.env['hr.payroll.structure'].create({
+                'name': 'Salary Structure for Software Developer',
+                'code': 'SD',
+                'company_id': cls.env.ref('base.main_company').id,
+                'parent_id': cls.env.ref('hr_payroll.structure_base').id,
+                'rule_ids': [(6, 0, [
+                    cls.env.ref(
+                        'hr_payroll.hr_salary_rule_houserentallowance1').id,
+                    cls.env.ref(
+                        'hr_payroll.hr_salary_rule_convanceallowance1').id,
+                    cls.env.ref(
+                        'hr_payroll.hr_salary_rule_professionaltax1').id,
+                    cls.env.ref(
+                        'hr_payroll.hr_salary_rule_providentfund1').id,
+                    cls.env.ref(
+                        'hr_payroll.hr_salary_rule_meal_voucher').id,
+                    cls.env.ref(
+                        'hr_payroll.hr_salary_rule_sales_commission').id
+                ])],
+        })
+        cls.structure.rule_ids.write({
+            "account_debit": cls.account_debit.id,
+            "account_credit": cls.account_credit.id,
+        })
         cls.contract = cls.env["hr.contract"].create(
             {
                 "name": "Test",
@@ -78,15 +99,5 @@ class PayrollPreparationToPayslipCase(SavepointCase):
                 "wage": 50000,
                 "state": "open",
                 "struct_id": cls.structure.id,
-            }
-        )
-
-    @classmethod
-    def _create_entry(cls, date_):
-        return cls.env["payroll.preparation.line"].create(
-            {
-                "date": date_,
-                "employee_id": cls.employee.id,
-                "company_id": cls.company.id,
             }
         )
