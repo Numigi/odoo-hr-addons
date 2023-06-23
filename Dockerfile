@@ -26,6 +26,7 @@ COPY hr_employee_type_private_wizard /mnt/extra-addons/hr_employee_type_private_
 COPY hr_event /mnt/extra-addons/hr_event
 COPY hr_expense_same_month /mnt/extra-addons/hr_expense_same_month
 COPY hr_holidays_natural_period /mnt/extra-addons/hr_holidays_natural_period
+COPY hr_payroll_account_partner /mnt/extra-addons/hr_payroll_account_partner
 COPY hr_payslip_chatter /mnt/extra-addons/hr_payslip_chatter
 COPY hr_timesheet_time_control_stop_at_checkout /mnt/extra-addons/hr_timesheet_time_control_stop_at_checkout
 COPY hr_working_space /mnt/extra-addons/hr_working_space
