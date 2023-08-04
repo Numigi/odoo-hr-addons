@@ -5,7 +5,7 @@
     <record id="project_hr_timesheet_enhanced_form" model="ir.ui.view">
         <field name="name">Project Hr Timesheet Enhanced Form </field>
         <field name="model">project.project</field>
-        <field name="inherit_id" ref="hr_timesheet.project_invoice_form"/>
+        <field name="inherit_id" ref="project.edit_project"/>
         <field name="arch" type="xml">
             <field name="analytic_account_id" position="after">
                 <field name="is_timesheet" invisible="True"/>
