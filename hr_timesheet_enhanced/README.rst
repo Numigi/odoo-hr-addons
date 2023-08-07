@@ -8,9 +8,9 @@ Dependencies
 
 See Readme of modules:
 
- https://github.com/Numigi/odoo-account-addons/tree/12.0/account_analytic_enhanced
+ https://github.com/Numigi/odoo-project-addons/tree/14.0/account_analytic_enhanced
 
- https://github.com/Numigi/odoo-account-addons/tree/12.0/project_enhanced
+ https://github.com/Numigi/odoo-project-addons/tree/14.0/project_enhanced
 
 
 Description
@@ -24,6 +24,36 @@ If a project is deleted, analytic account too if it has any analytic lines assoc
 
 If a project has timesheets associated, analytic account is read only in project form view.
 
+Usage
+-----
+
+- As a user who can manipulate projects and who has the access right to handle analytic accounts checked in my user profile (debug mode), 
+I go to `Project>Configuration>Projects`.
+
+.. image:: static/description/project_analytic_account.png
+
+- If I have a project that has timesheets on linked tasks (including archived tasks), and the projects linked to these timesheet lines correspond to the current project, 
+the project is qualified as `having timesheets` which implies the read-only setting of the `Analytic Account` field on the project form.
+
+.. image:: static/description/readonly_analytic_account.png
+
+- If I have a project whose projects of the timesheet lines linked to the analytic account correspond to the current project, 
+the project will be qualified as `having timesheets`` which also implies the read-only setting of the field `Analytic Account` on the project form.
+
+Notice: timesheet lines linked to account analytic is by default invisible.
+
+- In the opposite cases, the `Analytic Account` field can be modified.
+
+.. image:: static/description/editable_analytic_account.png
+
+- If I want to update the analytic account of a project (by some write operation), and the project is already qualified as `having timesheets` with an analytic account already linked to its account, an error message will be displayed:
+``Project ___project_name___ can't change its analytic account, because it has timesheets associated.``.
+
+- If I want to unarchive a project, its analytic account will also be unarchived.
+
+- In the opposite case (archive the project), it will archive the analytic account if it has at least one line of linked timesheets and there is at least one linked project.
+
+- If I want to delete a project, the linked analytic account will also be deleted, not considering whether the account is archived or not.
 
 Contributors
 ------------

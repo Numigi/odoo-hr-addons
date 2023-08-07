@@ -14,6 +14,8 @@
         "project_enhanced",
         "hr_timesheet",
     ],
-    "data": [],
+    "data": [
+        "views/project_views.xml",
+    ],
     "installable": True,
 }
