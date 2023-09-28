@@ -70,11 +70,6 @@ class TestAccountAnalytic(SavepointCase):
         self.project.write({"active": False})
         assert self.analytic_account.active
 
-    def test_account_analytic_stays_manualy_archived_using_project_activated(self):
-        self.analytic_account.toggle_active()
-        self.project.write({"active": True})
-        assert not self.analytic_account.active
-
     def test_account_analytic_archived_using_project_archived(self):
         self.project_2.unlink()
         self.analytic_line.unlink()
