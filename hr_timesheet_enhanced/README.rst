@@ -3,20 +3,10 @@ Hr Timesheet Enhanced
 
 .. contents:: Table of Contents
 
-Dependencies
-------------
-
-See Readme of modules:
-
- https://github.com/Numigi/odoo-project-addons/tree/14.0/account_analytic_enhanced
-
- https://github.com/Numigi/odoo-project-addons/tree/14.0/project_enhanced
-
-
 Description
 -----------
 
-If a project is activated, its analytic account too, if analytic account was not deactivated manually using button in its form view.
+If a project is activated, its analytic account too.
 
 If a project is deactivated, analytic account too if it has any analytic line and just this only project associated.
 
@@ -51,7 +41,7 @@ Notice: timesheet lines linked to account analytic is by default invisible.
 
 - If I want to unarchive a project, its analytic account will also be unarchived.
 
-- In the opposite case (archive the project), it will archive the analytic account if it has at least one line of linked timesheets and there is at least one linked project.
+- In the opposite case (archive the project), it will archive the analytic account if it has no linked timesheets and there is no linked project.
 
 - If I want to delete a project, the linked analytic account will also be deleted, not considering whether the account is archived or not.
 

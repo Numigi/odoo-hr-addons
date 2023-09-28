@@ -1,4 +1,4 @@
-# © 2022 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo.tests.common import SavepointCase
@@ -94,9 +94,9 @@ class TestAccountAnalytic(SavepointCase):
 
     def test_not_unlink_account_lines_unlink_project(self):
         self.project_2.unlink()
-        self.task.timesheet_ids.write({'task_id': False})
+        self.task.timesheet_ids.write({"task_id": False})
         self.task.unlink()
-        self.project.timesheet_ids.write({'project_id': False})
+        self.project.timesheet_ids.write({"project_id": False})
         self.project.unlink()
         assert len(self.analytic_account) == 1
 

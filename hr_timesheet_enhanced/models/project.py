@@ -1,4 +1,4 @@
-# © 2022 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# © 2023 - today Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import fields, models, api, _
@@ -6,11 +6,13 @@ from odoo.exceptions import UserError
 
 
 class Project(models.Model):
-
     _inherit = "project.project"
 
     is_timesheet = fields.Boolean(
-        string="Has timesheets", compute="_compute_is_timesheet", compute_sudo=True, store=True
+        string="Has timesheets",
+        compute="_compute_is_timesheet",
+        compute_sudo=True,
+        store=True,
     )
 
     @api.depends(
@@ -55,7 +57,6 @@ class Project(models.Model):
             )
 
     def _account_analytic_change_active(self, vals):
-
         if vals["active"]:
             self.mapped("analytic_account_id").write({"active": True})
 

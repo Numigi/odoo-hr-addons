@@ -19,7 +19,7 @@
         "hr_employee_private_wizard",
         "hr_employee_type",  # TA#15755
         "hr_employee_type_private_wizard",
-        "hr_timesheet_enhanced",
+        "hr_timesheet_enhanced",  # TA51920
         "hr_event",  # TA#3122
         "hr_expense_same_month",  # TA#18858
         "hr_payslip_chatter",  # TA#24250
