@@ -36,7 +36,7 @@ Notice: timesheet lines linked to account analytic is by default invisible.
 
 .. image:: static/description/editable_analytic_account.png
 
-- If I want to update the analytic account of a project (by some write operation), and the project is already qualified as `having timesheets` with an analytic account already linked to its account, an error message will be displayed:
+- If I want to update the analytic account of a project (by some write operation like calling write() function on action server or a cron..), and the project is already qualified as `having timesheets` with an analytic account already linked to its account, an error message will be displayed:
 ``Project ___project_name___ can't change its analytic account, because it has timesheets associated.``.
 
 - If I want to unarchive a project, its analytic account will also be unarchived.
