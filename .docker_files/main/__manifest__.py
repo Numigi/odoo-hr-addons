@@ -25,6 +25,7 @@
         "hr_expense_same_month",  # TA#18858
         "hr_holidays_natural_period",  # TA#52493
         "hr_payroll_account_partner",
+        "hr_payroll_report",
         "hr_payslip_chatter",  # TA#24250
         "hr_working_space",  # TA#3896
         "hr_timesheet_time_control_stop_at_checkout",  # TA#46133

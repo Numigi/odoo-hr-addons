@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payroll_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-11 06:22+0000\n"
+"PO-Revision-Date: 2023-12-11 06:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payroll_report
+#: model:ir.model.fields,help:hr_payroll_report.field_hr_payslip_line__payslip_state
+msgid "* When the payslip is created the status is 'Draft'\n"
+"                \n"
+"* If the payslip is under verification, the status is 'Waiting'.\n"
+"                \n"
+"* If the payslip is confirmed then status is set to 'Done'.\n"
+"                \n"
+"* When user cancel payslip the status is 'Rejected'."
+msgstr "* Quand la fiche de paie est créée, le statut est 'Brouillon'.\n"
+"* Si la fiche de paie est à contrôler, le statut est 'En Attente'.\n"
+"* Si la fiche de paie est confirmée, le statut est 'Terminée'.\n"
+"* Quand l'utilisateur annule la fiche de paie, le statut est 'Rejetée'."
+
+#. module: hr_payroll_report
+#: model:ir.model.fields,field_description:hr_payroll_report.field_hr_payslip_line__department_id
+msgid "Department"
+msgstr "Département"
+
+#. module: hr_payroll_report
+#: model:ir.model.fields,field_description:hr_payroll_report.field_hr_payslip_line__end_date
+msgid "End Date"
+msgstr "Date fin"
+
+#. module: hr_payroll_report
+#: model:ir.model,name:hr_payroll_report.model_hr_payslip_line
+msgid "Payslip Line"
+msgstr "Ligne de bulletin de salaire"
+
+#. module: hr_payroll_report
+#: model:ir.model.fields,field_description:hr_payroll_report.field_hr_payslip_line__period_id
+msgid "Period"
+msgstr "Période"
+
+#. module: hr_payroll_report
+#: model:ir.actions.act_window,name:hr_payroll_report.action_hr_payslip_report
+#: model:ir.ui.menu,name:hr_payroll_report.menu_hr_payslip_report
+#: model_terms:ir.ui.view,arch_db:hr_payroll_report.view_hr_payslip_line_report_pivot
+msgid "Report"
+msgstr "Analyse"
+
+#. module: hr_payroll_report
+#: model:ir.model.fields,field_description:hr_payroll_report.field_hr_payslip_line__start_date
+msgid "Start Date"
+msgstr "Date début"
+
+#. module: hr_payroll_report
+#: model:ir.model.fields,field_description:hr_payroll_report.field_hr_payslip_line__payslip_state
+msgid "Status"
+msgstr "Statut du bulletin"
