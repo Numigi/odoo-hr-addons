@@ -25,7 +25,6 @@
                     (0, 0, {'view_mode': 'tree', 'view_id': ref('hr_payroll.view_hr_payslip_line_tree')}),
                     (0, 0, {'view_mode': 'pivot', 'view_id': ref('view_hr_payslip_line_report_pivot')}),
                 ]"/>
-        <!-- <field name="search_view_id" ref="hr_payslip_run_filter"/> -->
     </record>
     <menuitem action="action_hr_payslip_report" id="menu_hr_payslip_report" parent="hr_payroll.menu_hr_payroll_root" groups="hr_payroll.group_hr_payroll_manager"/>
 
