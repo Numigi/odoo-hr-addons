@@ -13,11 +13,11 @@ This menu is only accessible to a Payroll / Manager group.
 When I click on this menu, I have a list view of payroll calculation lines.
 This list view displays the same fields as this template's existing list view, but without context, it displays all lines from all payrolls, for all employees.
 
-.. image:: static/description/report_tree_view.png.png
+.. image:: static/description/report_tree_view.png
 
 From this view, I have a button to display the pivot view.
 
-.. image:: static/description/report_pivot_view.png.png.png
+.. image:: static/description/report_pivot_view.png
 
 This pivot view offers, from the `Measure` button:
 *Quantity*
