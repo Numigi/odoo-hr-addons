@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payroll_canadian_declaration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-04 20:30+0000\n"
+"PO-Revision-Date: 2024-01-04 20:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payroll_canadian_declaration
+#: model_terms:ir.ui.view,arch_db:hr_payroll_canadian_declaration.hr_salary_rule_form
+msgid "Canadian Declaration"
+msgstr "Déclaration Canadienne"
+
+#. module: hr_payroll_canadian_declaration
+#: model:ir.actions.server,name:hr_payroll_canadian_declaration.action_server_canadian_declartion_ir_actions_server
+#: model:ir.cron,cron_name:hr_payroll_canadian_declaration.action_server_canadian_declartion
+#: model:ir.cron,name:hr_payroll_canadian_declaration.action_server_canadian_declartion
+msgid "Canadian Declaration : Compute R1 and T4"
+msgstr "Déclaration Canadienne: Calcul R1 et T1"
+
+#. module: hr_payroll_canadian_declaration
+#: model:ir.model,name:hr_payroll_canadian_declaration.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Bulletin de paie"
+
+#. module: hr_payroll_canadian_declaration
+#: model:ir.model,name:hr_payroll_canadian_declaration.model_hr_payslip_line
+msgid "Payslip Line"
+msgstr ""
+
+#. module: hr_payroll_canadian_declaration
+#: model:ir.model.fields,field_description:hr_payroll_canadian_declaration.field_hr_payslip_line__r1_box
+#: model:ir.model.fields,field_description:hr_payroll_canadian_declaration.field_hr_salary_rule__r1_box
+#: model_terms:ir.ui.view,arch_db:hr_payroll_canadian_declaration.view_hr_payslip_line_filter
+msgid "R1 Box"
+msgstr "Case R1"
+
+#. module: hr_payroll_canadian_declaration
+#: model:ir.model,name:hr_payroll_canadian_declaration.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "Régle salariale"
+
+#. module: hr_payroll_canadian_declaration
+#: model:ir.model.fields,field_description:hr_payroll_canadian_declaration.field_hr_payslip_line__t4_box
+#: model:ir.model.fields,field_description:hr_payroll_canadian_declaration.field_hr_salary_rule__t4_box
+#: model_terms:ir.ui.view,arch_db:hr_payroll_canadian_declaration.view_hr_payslip_line_filter
+msgid "T4 Box"
+msgstr "Case T4"

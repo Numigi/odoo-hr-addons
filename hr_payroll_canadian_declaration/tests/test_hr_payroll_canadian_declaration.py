@@ -20,23 +20,23 @@ class TestPayslip(PayrollPreparationToPayslipCase):
             }
         )
         cls.rule_a = cls.env.ref('hr_payroll.hr_salary_rule_houserentallowance1')
+        cls.rule_a.t4_box = "Text T4 BOX"
+        cls.rule_a.r1_box = "Text R1 BOX"
+        cls.payslip.compute_sheet()
+        cls.payslip_rule_a_line = cls.payslip.line_ids.filtered(lambda p: p.salary_rule_id.id == cls.rule_a.id)
 
     def test_00_compute_new_canadian_declaration_box(self):
-        self.rule_a.t4_box = "Text T4 BOX"
-        self.rule_a.r1_box = "Text R1 BOX"
-        self.payslip.compute_sheet()
-        payslip_rule_a_line = self.payslip.line_ids.filtered(lambda p: p.salary_rule_id.id == self.rule_a.id)
-        assert payslip_rule_a_line.t4_box == self.rule_a.t4_box
-        assert payslip_rule_a_line.r1_box == self.rule_a.r1_box
+
+        assert self.payslip_rule_a_line.t4_box == self.rule_a.t4_box
+        assert self.payslip_rule_a_line.r1_box == self.rule_a.r1_box
 
     def test_01_assign_canadian_declaration_box(self):
         self.payslip.compute_sheet()
-        self.rule_a.t4_box = "Text T4 BOX"
-        self.rule_a.r1_box = "Text R1 BOX"
-        self.env["hr.payslip.line"].compute_canadian_declaration()
-        payslip_rule_a_line = self.payslip.line_ids.filtered(lambda p: p.salary_rule_id.id == self.rule_a.id)
-        assert payslip_rule_a_line.t4_box == self.rule_a.t4_box
-        assert payslip_rule_a_line.r1_box == self.rule_a.r1_box
+        self.rule_a.t4_box = "Another Text T4 BOX"
+        self.rule_a.r1_box = "Another Text R1 BOX"
+        self.env["hr.payslip.line"].compute_canadian_declaration(replace_all=True)
+        assert self.payslip_rule_a_line.t4_box == self.rule_a.t4_box
+        assert self.payslip_rule_a_line.r1_box == self.rule_a.r1_box
 
     def test_02_compute_new_canadian_declaration_box_empty_box_only(self):
         self.rule_a.t4_box = "Text A T4 BOX"
