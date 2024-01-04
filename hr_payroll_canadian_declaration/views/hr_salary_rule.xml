@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+     <record id="hr_salary_rule_form" model="ir.ui.view">
+            <field name="name">Hr salary rule : R1 and T4 Box </field>
+            <field name="model">hr.salary.rule</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+            <field name="arch" type="xml">
+                <field name="register_id" position="after">
+                    <separator colspan="4" string="Canadian Declaration"/>
+                     <group colspan="2">
+                        <field name="t4_box"/>
+                        <field name="r1_box"/>
+                    </group>
+                </field>
+            </field>
+        </record>
+</odoo>

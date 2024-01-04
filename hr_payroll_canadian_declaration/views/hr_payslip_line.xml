@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+          <record id="view_hr_payslip_line_filter" model="ir.ui.view">
+            <field name="name">Hr payslip line select : R1 and T4</field>
+            <field name="model">hr.payslip.line</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_line_filter"/>
+            <field name="arch" type="xml">
+                <filter name="employee_id" position="after">
+                    <filter string="T4 Box" name="t4_box" context="{'group_by':'t4_box'}"/>
+                    <filter string="R1 Box" name="r1_box" context="{'group_by':'r1_box'}"/>
+                </filter>
+            </field>
+        </record>
+</odoo>
