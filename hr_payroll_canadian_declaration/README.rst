@@ -12,6 +12,7 @@ Usage
 -----
 
 1 - As a payroll user, I go to a salary rule.
+
 2 - I set values for T4 Box and R1 Box .
 
 .. image:: static/description/salary_rule.png
