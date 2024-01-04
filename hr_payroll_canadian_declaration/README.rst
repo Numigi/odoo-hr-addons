@@ -15,7 +15,7 @@ Usage
 
 2 - I set values for T4 Box and R1 Box .
 
-.. image:: static/description/salary_rule.png
+.. image:: static/description/hr_salary_rule.png
 
 3 - I create a payslip with a structure having one rule with T4 and R1 Box
 
