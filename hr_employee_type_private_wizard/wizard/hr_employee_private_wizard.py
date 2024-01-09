@@ -22,21 +22,15 @@ class EmployeePrivateWizard(models.TransientModel):
                 wizard._is_internal_employee()
                 and not self.env.user.has_internal_employee_access()
             ):
-                raise AccessError(
-                    _(
-                        "You are not allowed to access private information of internal employees."
-                    )
-                )
+                raise AccessError(_("You are not allowed to access private "
+                                    "information of internal employees."))
 
             if (
                 wizard._is_external_employee()
                 and not self.env.user.has_external_employee_access()
             ):
-                raise AccessError(
-                    _(
-                        "You are not allowed to access private information of external employees."
-                    )
-                )
+                raise AccessError(_("You are not allowed to access private "
+                                    "information of external employees."))
 
     def check_extended_security_write(self):
         super().check_extended_security_write()

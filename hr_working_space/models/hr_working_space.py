@@ -14,5 +14,6 @@ class HRAttendanceWithWorkingSpace(models.Model):
     name = fields.Char(string='Name', required=True)
     icon = fields.Char(
         "Icon",
-        help="Font Awesome code of the icon that will represent the working space. See https://fontawesome.com/icons?d=gallery."
+        help="Font Awesome code of the icon that will represent the working space. "
+        "See https://fontawesome.com/icons?d=gallery."
     )

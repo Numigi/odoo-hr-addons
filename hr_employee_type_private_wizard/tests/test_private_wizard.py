@@ -28,7 +28,7 @@ class TestPrivateWizard(SavepointCase):
                 "email": "test@example.com",
                 "groups_id": [
                     (4, cls.env.ref("hr.group_hr_user").id),
-                    ],
+                ],
             }
         )
 

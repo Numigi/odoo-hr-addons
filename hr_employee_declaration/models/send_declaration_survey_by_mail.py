@@ -42,8 +42,11 @@ class HrEmployeeWithSendDeclarations(models.Model):
             })
 
     def _add_token_to_declaration_body(self, body, user_input):
-        url_with_token = '%s?%s' % (user_input.survey_id.get_start_url(), werkzeug.urls.url_encode(
-            {'answer_token': user_input and user_input.access_token or None}))
+        url_with_token = '%s?%s' % (
+            user_input.survey_id.get_start_url(), werkzeug.urls.url_encode(
+                {'answer_token': user_input and user_input.access_token or None}
+            )
+        )
 
         if '__URL__' not in body:
             raise ValidationError(_(
