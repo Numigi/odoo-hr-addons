@@ -19,7 +19,6 @@
         'data/survey_type.xml',
         'data/ir_cron.xml',
         'data/queue_job_function_data.xml',
-        #'demo/survey.xml',
         'views/hr_employee_with_declaration_smart_button.xml',
         'views/hr_employee_with_declaration_settings.xml',
         'views/survey_type_with_is_employee_declaration.xml',

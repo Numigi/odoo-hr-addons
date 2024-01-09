@@ -9,7 +9,8 @@
     "website": "https://bit.ly/numigi-com",
     "license": "LGPL-3",
     "category": "Human Resources",
-    "summary": """Add automations with value of active field and deletion of associated project""",
+    "summary": """Add automations with value of active
+    field and deletion of associated project""",
     "depends": [
         "hr_timesheet",
     ],
