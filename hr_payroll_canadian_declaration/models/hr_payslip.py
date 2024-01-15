@@ -8,7 +8,7 @@ class HrPayslipLine(models.Model):
 
     _inherit = 'hr.payslip.line'
 
-    t4_box = fields.Text(related='salary_rule_id.t4_box', index=True, store=True, string="T4 Boxx")
+    t4_box = fields.Text(related='salary_rule_id.t4_box', index=True, store=True, string="T4 Box")
     r1_box = fields.Text(related='salary_rule_id.r1_box', index=True, store=True, string="R1 Box")
 
 
