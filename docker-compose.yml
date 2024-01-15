@@ -7,7 +7,6 @@ services:
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./.log:/var/log/odoo
-      - ./hr_contract_wage_hourly:/mnt/extra-addons/hr_contract_wage_hourly
     ports:
       - "8069:8069"
       - "8071:8071"
