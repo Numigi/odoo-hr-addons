@@ -24,6 +24,7 @@ class TestPayslip(PayrollPreparationToPayslipCase):
     def test_00_compute_new_canadian_declaration_box(self):
         self.rule_a.t4_box = "Text T4 BOX"
         self.rule_a.r1_box = "Text R1 BOX"
+        self.payslip.compute_sheet()
         payslip_rule_a_line = self.payslip.line_ids.filtered(lambda p: p.salary_rule_id.id == self.rule_a.id)
         assert payslip_rule_a_line.t4_box == self.rule_a.t4_box
         assert payslip_rule_a_line.r1_box == self.rule_a.r1_box
