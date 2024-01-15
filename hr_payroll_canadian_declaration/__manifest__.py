@@ -13,7 +13,6 @@
     "data": [
         'views/hr_salary_rule.xml',
         'views/hr_payslip_line.xml',
-        'data/ir_cron_data.xml',
              ],
     'installable': True,
 }
