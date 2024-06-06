@@ -3,8 +3,8 @@
 from odoo import models, fields
 
 
-class HrEmployeeType(models.Model):
-    _inherit = "hr.employee"
+class HrEmployeeBase(models.AbstractModel):
+    _inherit = "hr.employee.base"
     ttype = fields.Selection(
         [("internal", "Internal"), ("external", "External")],
         "Type",
