@@ -4,11 +4,12 @@
         <field name="name">HR Employee Form: add Type</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="groups_id" eval="[(4, ref('hr.group_hr_user'))]"/>
         <field name="arch" type="xml">
             <field name="category_ids" position="after">
                 <group>
                     <group name="hr_type">
-                        <field name="ttype" groups="hr.group_hr_user"/>
+                        <field name="ttype"/>
                     </group>
                 </group>
             </field>
@@ -19,6 +20,7 @@
         <field name="name">HR Employee Search: add Type</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="groups_id" eval="[(4, ref('hr.group_hr_user'))]"/>
         <field name="arch" type="xml">
             <field name="job_id" position="after">
                 <field name="ttype"/>
@@ -35,6 +37,7 @@
         <field name="name">Internal Employees</field>
         <field name="res_model">hr.employee</field>
         <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="groups_id" eval="[(4, ref('hr.group_hr_user'))]"/>
         <field name="context">{
             "default_ttype": "internal",
             "search_default_ttype": "internal"
@@ -46,6 +49,7 @@
         <field name="name">External Employees</field>
         <field name="res_model">hr.employee</field>
         <field name="view_mode">kanban,tree,form,activity</field>
+        <field name="groups_id" eval="[(4, ref('hr.group_hr_user'))]"/>
         <field name="context">{
             "default_ttype": "external",
             "search_default_ttype": "external"
