@@ -9,5 +9,5 @@ class HrEmployeeType(models.Model):
         [("internal", "Internal"), ("external", "External")],
         "Type",
         default="internal",
-        groups="base.group_hr_user",
+        # groups="base.group_hr_user",
     )
