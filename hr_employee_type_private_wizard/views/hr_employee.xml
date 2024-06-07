@@ -5,6 +5,7 @@
         <field name="name">HR Employee Form: add button to open private data</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr_employee_type.hr_employee_add_type_form"/>
+        <field name="groups_id" eval="[(4, ref('hr.group_hr_user'))]"/>
         <field name="arch" type="xml">
             <group name="hr_type" position="inside">
                 <div colspan="2">
@@ -31,6 +32,7 @@
         <field name="name">HR Employee Form: propagate employee type to home address</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="groups_id" eval="[(4, ref('hr.group_hr_user'))]"/>
         <field name="arch" type="xml">
             <field name="address_home_id" position="attributes">
                 <attribute name="context" operation="python_dict" key="default_employee_type">ttype</attribute>
@@ -42,6 +44,7 @@
         <field name="name">HR Employee Form: make employee type readonly</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr_employee_type.hr_employee_add_type_form"/>
+        <field name="groups_id" eval="[(4, ref('hr.group_hr_user'))]"/>
         <field name="arch" type="xml">
             <field name="ttype" position="attributes">
                 <attribute name="readonly">1</attribute>
