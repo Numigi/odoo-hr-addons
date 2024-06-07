@@ -8,7 +8,7 @@
             <field name="category_ids" position="after">
                 <group>
                     <group name="hr_type">
-                        <field name="ttype"/>
+                        <field name="ttype" groups="hr.group_hr_user"/>
                     </group>
                 </group>
             </field>
