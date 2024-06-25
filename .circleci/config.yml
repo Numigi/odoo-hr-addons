@@ -12,7 +12,6 @@ jobs:
 
       - run:
           <<: *quay_io_login
-
       - run:
           name: Build -- Init Database
           command: docker-compose run --rm odoo odoo --stop-after-init -i main
