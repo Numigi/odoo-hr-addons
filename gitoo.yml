@@ -1,38 +1,19 @@
-- url: https://github.com/Numigi/odoo-base-addons
-  branch: "14.0"
-  includes:
-    - base_extended_security
-    - private_data_group
-    - test_http_request
-
-- url: https://github.com/Numigi/odoo-project-addons
-  branch: "14.0"
-  includes:
-    - account_analytic_enhanced
-    - project_enhanced
-
-- url: https://github.com/Numigi/odoo-survey-addons
-  branch: "14.0"
-  includes:
-    - survey_type
-
-- url: https://github.com/oca/queue
-  branch: "14.0"
+- url: https://github.com/OCA/queue
+  branch: "16.0"
   includes:
     - queue_job
 
-- url: https://github.com/oca/payroll
-  branch: "14.0"
+- url: https://github.com/OCA/payroll
+  branch: "16.0"
   includes:
     - payroll
-    - hr_payroll_period
 
-- url: https://github.com/oca/server-ux
-  branch: "14.0"
+- url: https://github.com/OCA/server-ux
+  branch: "16.0"
   includes:
     - date_range
 
-- url: https://github.com/oca/server-tools
-  branch: "14.0"
+- url: https://github.com/OCA/server-tools
+  branch: "16.0"
   includes:
     - base_view_inheritance_extension
