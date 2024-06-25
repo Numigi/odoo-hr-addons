@@ -11,8 +11,7 @@ jobs:
       - checkout
 
       - run:
-           <<: *quay_io_login
-
+          <<: *quay_io_login
       - run:
           name: Build -- Init Database
           command: docker-compose run --rm odoo odoo --stop-after-init -i main
@@ -53,7 +52,8 @@ workflows:
   version: 2
   odoo:
     jobs:
-      - tests
+      - tests:
+          context: quay.io
       # - auto-tag:
       #     context: nws
       #     requires:
