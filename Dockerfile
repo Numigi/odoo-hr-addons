@@ -28,6 +28,7 @@ COPY hr_expense_same_month /mnt/extra-addons/hr_expense_same_month
 COPY hr_holidays_natural_period /mnt/extra-addons/hr_holidays_natural_period
 COPY hr_payroll_account_partner /mnt/extra-addons/hr_payroll_account_partner
 COPY hr_payroll_canadian_declaration  /mnt/extra-addons/hr_payroll_canadian_declaration
+COPY hr_payroll_payslip_by_department /mnt/extra-addons/hr_payroll_payslip_by_department
 COPY hr_payroll_report /mnt/extra-addons/hr_payroll_report
 COPY hr_payslip_batch_chatter /mnt/extra-addons/hr_payslip_batch_chatter
 COPY hr_payslip_chatter /mnt/extra-addons/hr_payslip_chatter

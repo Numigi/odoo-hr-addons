@@ -1,5 +1,5 @@
-# © 2024 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+# Copyright 2024 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
 
@@ -7,22 +7,17 @@ from odoo import api, fields, models
 class HrPayslipEmployees(models.TransientModel):
     _inherit = "hr.payslip.employees"
 
-    employee_ids = fields.Many2many(
-        "hr.employee",
-        "hr_employee_group_rel",
-        "payslip_id",
-        "employee_id",
-        "Employees",
-        default=lambda self: self.get_default_employees(),
-    )
-
     @api.model
-    def get_default_employees(self):
-        departments = self.env.context.get("department_ids", [(6, 0, [])])
-
-        department_ids = departments[0][2]
+    def _get_default_employees(self):
+        department_ids = self.env.context.get("department_ids")
+        # Get the list part of the tuple containing the ids of department
+        department_ids = department_ids[0][2]
         return (
             self.env["hr.employee"]
             .search([("department_id", "in", department_ids)])
             .ids
         )
+
+    employee_ids = fields.Many2many(
+        default=lambda self: self._get_default_employees(),
+    )
