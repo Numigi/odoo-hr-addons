@@ -36,3 +36,6 @@
   branch: "14.0"
   includes:
     - base_view_inheritance_extension
+
+- url: https://github.com/oca/hr-attendance
+  branch: "14.0"

@@ -12,7 +12,6 @@ class HRWorkingSpace(models.Model):
     working_space_id = fields.Many2one(
         'hr.working.space',
         string='Working Space',
-        required=True
     )
 
 
