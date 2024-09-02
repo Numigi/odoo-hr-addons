@@ -9,7 +9,7 @@
     'license': 'AGPL-3',
     'category': 'Human Resources',
     'summary': 'This module allows to generate payslip by department',
-    'depends': ['hr_payroll'],
+    'depends': ['hr_payroll', 'hr_period'],
     'data': [
         'views/hr_payslip_run_views.xml',
     ],
