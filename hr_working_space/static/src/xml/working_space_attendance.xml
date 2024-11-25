@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+
+    <t t-extend="HrAttendanceCheckInOutButtons">
+        <xpath t-jquery="button" t-operation="replace">
+            <t t-if="widget.workingSpaces">
+                <t t-foreach="widget.workingSpaces" t-as="working_space" t-if="!checked_in">
+                    <i t-att-id="working_space.id"
+                        t-att-title="working_space.name"
+                        t-att-class="working_space.icon + ' fa-3x fa o_hr_working_space_sign_in btn btn-primary o_hr_working_space_icon'" />
+                </t>
+                <t t-if="checked_in">
+                    <button t-attf-class="o_hr_attendance_sign_in_out_icon btn btn-{{ checked_in ? 'warning' : 'success' }} align-self-center px-5 py-3 mt-4 mb-2">
+                        <span class="align-middle fs-2 ms-3">Check OUT</span>
+                    </button>
+                </t>
+            </t>
+        </xpath>
+
+    </t>
+
+</template>
