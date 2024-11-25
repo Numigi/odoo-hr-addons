@@ -10,8 +10,6 @@
     "license": "LGPL-3",
     "category": "Other",
     "summary": "Install all addons required for testing.",
-    "depends": [
-        "hr",
-    ],
+    "depends": ["hr_expense_same_month"],
     "installable": True,
 }
