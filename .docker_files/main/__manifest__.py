@@ -11,7 +11,7 @@
     "category": "Other",
     "summary": "Install all addons required for testing.",
     "depends": [
-        "hr",
+        "hr_attendance_menu_unrestricted",
     ],
     "installable": True,
 }
