@@ -1,74 +1,89 @@
-# Copyright 2024 - Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+# Copyright 2024 Numigi (tm) and all its contributors (https://bit.ly/numigiens)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo.tests.common import TransactionCase
+from odoo.addons.hr_period.tests import test_hr_fiscalyear
 
 
-class TestHrPayslipEmployees(TransactionCase):
+class PayslipCase(test_hr_fiscalyear.TestHrFiscalyear):
     def setUp(self):
-        super(TestHrPayslipEmployees, self).setUp()
+        super(PayslipCase, self).setUp()
+
+        self.payslip_obj = self.env['hr.payslip']
+        self.run_obj = self.env['hr.payslip.run']
+        self.wzd_obj = self.env['hr.payslip.employees']
 
         self.department1 = self.env['hr.department'].create({'name': 'Department 1'})
         self.department2 = self.env['hr.department'].create({'name': 'Department 2'})
 
-        self.employee1 = self.env['hr.employee'].create(
-            {
-                'name': 'Employee 1',
-                'department_id': self.department1.id,
-            }
-        )
-        self.employee2 = self.env['hr.employee'].create(
-            {
-                'name': 'Employee 2',
-                'department_id': self.department1.id,
-            }
-        )
-        self.employee3 = self.env['hr.employee'].create(
-            {
-                'name': 'Employee 3',
-                'department_id': self.department2.id,
-            }
-        )
-        self.payslip_run = self.env['hr.payslip.run'].create(
-            {
-                'name': 'Test Payslip Run',
-                'date_start': '2023-01-01',
-                'date_end': '2023-01-31',
-                'department_ids': [(6, 0, [self.department1.id, self.department2.id])],
-            }
-        )
+        self.employee1 = self.env['hr.employee'].create({
+            'name': 'Employee 1',
+            'department_id': self.department1.id,
+        })
+        self.employee2 = self.env['hr.employee'].create({
+            'name': 'Employee 2',
+            'department_id': self.department2.id,
+        })
 
-    def test_default_employees_with_non_empty_payslip_batch_department(self):
-        context = {
-            'department_ids': [(6, 0, [self.department1.id, self.department2.id])]
+    def create_contract(self, name, schedule_pay, employee, date_start):
+        contract_dict = {
+            'name': name,
+            'employee_id': employee.id,
+            'wage': 10.0,
+            'schedule_pay': schedule_pay,
+            'date_start': date_start,
         }
-        payslip_employees = (
-            self.env['hr.payslip.employees'].with_context(context).create({})
-        )
-        default_employees = payslip_employees.employee_ids.ids
+        return self.env['hr.contract'].create(contract_dict)
+
+    def test_payslip_wizard_filters_employees_by_departments(self):
+        fy = self.create_fiscal_year({'type_id': self.type_fy.id})
+        fy.create_periods()
+        periods = self.get_periods(fy)
+        fy.button_confirm()
+
+        date_from = periods[1].date_start
+        date_to = periods[1].date_end
+        contract1 = self.create_contract(
+            'Contract 1', 'monthly', self.employee1, date_from)
+        contract2 = self.create_contract(
+            'Contract 2', 'quarterly', self.employee2, date_from)
+
+        self.payslip_obj.create({
+            'employee_id': self.employee1.id,
+            'contract_id': contract1.id,
+            'date_from': date_from,
+            'date_to': date_to,
+            'date_payment': periods[1].date_payment,
+            'company_id': self.company.id,
+        })
+        self.payslip_obj.create({
+            'employee_id': self.employee2.id,
+            'contract_id': contract2.id,
+            'date_from': date_from,
+            'date_to': date_to,
+            'date_payment': periods[1].date_payment,
+            'company_id': self.company.id,
+        })
+
+        run = self.run_obj.create({
+            'name': periods[0].name,
+            'date_start': periods[0].date_start,
+            'date_end': periods[0].date_end,
+            'date_payment': periods[0].date_payment,
+            'hr_period_id': periods[0].id,
+            'schedule_pay': 'monthly',
+            'company_id': self.company.id,
+            'department_ids': [(6, 0, [self.department1.id])],
+        })
+
+        wizard = run.get_payslip_employees_wizard()
+
         self.assertIn(
             self.employee1.id,
-            default_employees,
-            "Employee 1 should be in the default employees",
+            wizard['context']['default_employee_ids'][0][2],
+            "Employee 1 should be included in the wizard."
         )
-        self.assertIn(
+        self.assertNotIn(
             self.employee2.id,
-            default_employees,
-            "Employee 2 should be in the default employees",
-        )
-        self.assertIn(
-            self.employee3.id,
-            default_employees,
-            "Employee 3 should be in the default employees",
-        )
-
-    def test_employee_list_with_empty_payslip_batch_department(self):
-        context = {'department_ids': [(6, 0, [])]}
-        payslip_employees = (
-            self.env['hr.payslip.employees'].with_context(context).create({})
-        )
-        self.assertEqual(
-            payslip_employees.employee_ids.ids,
-            [],
-            "No employees should be returned when department_ids is empty",
+            wizard['context']['default_employee_ids'][0][2],
+            "Employee 2 shouldn't be included in the wizard."
         )
