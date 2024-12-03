@@ -22,7 +22,6 @@ class HrPayslipRun(models.Model):
             employee_ids = self.env["hr.employee"].browse(
                 res["context"]["default_employee_ids"][0][2]
             )
-
             if employee_ids:
                 employee_filtered_ids = employee_ids.filtered(
                     lambda e: e.department_id in self.department_ids
