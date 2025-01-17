@@ -3,3 +3,4 @@
 
 from . import hr_working_space
 from . import hr_attendance
+from . import hr_employee

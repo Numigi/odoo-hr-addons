@@ -10,8 +10,8 @@ class HRAttendanceWithWorkingSpace(models.Model):
     _name = "hr.working.space"
     _description = "HR Working Space"
 
-    active = fields.Boolean(string='Active', default=True)
-    name = fields.Char(string='Name', required=True)
+    active = fields.Boolean(string="Active", default=True)
+    name = fields.Char(string="Name", required=True)
     icon = fields.Char(
         "Icon",
         help="Font Awesome code of the icon that will represent the working space. "

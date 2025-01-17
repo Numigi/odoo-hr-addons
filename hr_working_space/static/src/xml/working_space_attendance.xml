@@ -1,22 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <template xml:space="preserve">
-
-    <t t-extend="HrAttendanceCheckInOutButtons">
-        <xpath t-jquery="button" t-operation="replace">
-            <t t-if="widget.workingSpaces">
-                <t t-foreach="widget.workingSpaces" t-as="working_space" t-if="!checked_in">
-                    <i t-att-id="working_space.id"
-                        t-att-title="working_space.name"
-                        t-att-class="working_space.icon + ' fa-3x fa o_hr_working_space_sign_in btn btn-primary o_hr_working_space_icon'" />
-                </t>
-                <t t-if="checked_in">
-                    <button t-attf-class="o_hr_attendance_sign_in_out_icon btn btn-{{ checked_in ? 'warning' : 'success' }} align-self-center px-5 py-3 mt-4 mb-2">
-                        <span class="align-middle fs-2 ms-3">Check OUT</span>
+    <t t-extend="HrAttendanceMyMainMenu">
+        <t t-jquery="t[t-call='HrAttendanceCheckInOutButtons']" t-operation="replace">
+            <t t-if="widget.workingSpaces and widget.workingSpaces.length > 0">
+                <t t-call="HRAttendanceWorkingSpace"/>
+            </t>
+            <t t-else="">
+                <t t-call="HrAttendanceCheckInOutButtons"/>
+            </t>
+        </t>
+    </t>
+    <t t-name="HRAttendanceWorkingSpace">
+        <div class="flex-grow-1">
+           <t t-if="!checked_in">
+                <t t-foreach="widget.workingSpaces" t-as="working_space" >
+                    <button t-att-id="working_space.id" t-att-title="working_space.name" 
+                            class="o_hr_attendance_sign_in_out_icon btn btn-primary align-self-center mt-4 mb-2"
+                            style="width: 80px">
+                    <i t-attf-class="fa fa-4x {{ working_space.icon }} align-middle"/>
                     </button>
                 </t>
             </t>
-        </xpath>
-
+            <t t-else="">
+                <button class="o_hr_attendance_sign_in_out_icon btn btn-warning align-self-center px-5 py-3 mt-4 mb-2">
+                    <i class="fa fa-4x fa-sign-out align-middle"/>
+                    <span class="align-middle fs-2 ms-3">Check OUT</span>
+                </button>
+            </t>
+        </div>
     </t>
 
 </template>
+
+
