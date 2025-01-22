@@ -11,7 +11,7 @@
     "category": "Other",
     "summary": "Install all addons required for testing.",
     "depends": [
-        # "hr_event",  # TA#72111 : Comment the test according the task
+        # "hr_event",  # TA#72111 : Disable module installation according the task
         "hr_working_space",
     ],
     "installable": True,
