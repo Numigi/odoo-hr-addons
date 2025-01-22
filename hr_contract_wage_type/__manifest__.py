@@ -13,7 +13,7 @@
         "hr_contract",
     ],
     "data": [
-        "views/hr_contract_views.xml",
+        "views/hr_contract_view.xml",
     ],
     "installable": True,
 }
