@@ -10,6 +10,9 @@
     "license": "LGPL-3",
     "category": "Other",
     "summary": "Install all addons required for testing.",
-    "depends": ["hr_working_space"],
+    "depends": [
+        # "hr_event",  # TA#72111 : Comment the test according the task
+        "hr_working_space",
+    ],
     "installable": True,
 }

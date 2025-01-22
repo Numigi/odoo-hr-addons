@@ -15,9 +15,10 @@ class TestModules(TransactionCase):
         super(TestModules, self).setUp()
         self.modules = self.env["ir.module.module"]
 
-    def test_hr_event(self):
-        """HR Event is installed."""
-        self.assertTrue(self.modules.search([("name", "=", "hr_event")]))
+    # TA#72111 : Comment the test according the task
+    # def test_hr_event(self):
+    #     """HR Event is installed."""
+    #     self.assertTrue(self.modules.search([("name", "=", "hr_event")]))
 
     def test_hr_working_space(self):
         """Working Space is installed."""
