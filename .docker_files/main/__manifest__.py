@@ -11,7 +11,6 @@
     "category": "Other",
     "summary": "Install all addons required for testing.",
     "depends": [
-        # "hr_event",  # TA#72111 : Comment the test according the task
         "hr_contract_wage_type",
         "hr_working_space",
     ],
