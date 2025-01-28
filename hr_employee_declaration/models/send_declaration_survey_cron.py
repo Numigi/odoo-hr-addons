@@ -12,12 +12,20 @@ class HrEmployeeWithDeclarationEmailCron(models.Model):
 
     _inherit = 'hr.employee'
 
-    periodic_declaration = fields.Boolean()
-    declaration_next_date = fields.Date('Next Declaration Date')
-    declaration_periodicity = fields.Selection([
-        ('month', 'Month'),
-        ('year', 'Year'),
-    ])
+    periodic_declaration = fields.Boolean(
+        groups="hr.group_hr_manager",
+    )
+    declaration_next_date = fields.Date(
+        "Next Declaration Date",
+        groups="hr.group_hr_manager",
+    )
+    declaration_periodicity = fields.Selection(
+        [
+            ("month", "Month"),
+            ("year", "Year"),
+        ],
+        groups="hr.group_hr_manager",
+    )
 
     def send_due_declaration_surveys_by_email(self):
         """Send every due employee declarations by email."""

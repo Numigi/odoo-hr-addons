@@ -12,11 +12,23 @@ class HrEmployeeWithSendDeclarations(models.Model):
     _inherit = 'hr.employee'
 
     declaration_survey_id = fields.Many2one(
-        'survey.survey', 'Declaration Survey', ondelete='restrict')
+        "survey.survey",
+        "Declaration Survey",
+        ondelete="restrict",
+        groups="hr.group_hr_manager",
+    )
     declaration_recipient_id = fields.Many2one(
-        'hr.employee', 'Declaration Recipient', ondelete='restrict')
+        "hr.employee",
+        "Declaration Recipient",
+        ondelete="restrict",
+        groups="hr.group_hr_manager",
+    )
     declaration_mail_template_id = fields.Many2one(
-        'mail.template', 'Declaration Email Template', ondelete='restrict')
+        "mail.template",
+        "Declaration Email Template",
+        ondelete="restrict",
+        groups="hr.group_hr_manager",
+    )
 
     def send_declaration_survey_by_email(self):
         """Send the declaration by email to a single employee.

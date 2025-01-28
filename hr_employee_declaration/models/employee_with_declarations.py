@@ -27,10 +27,16 @@ class HrEmployeeWithDeclarations(models.Model):
     _inherit = 'hr.employee'
 
     declaration_ids = fields.One2many(
-        'survey.user_input', string='Declarations',
-        compute='_compute_declaration_ids')
+        "survey.user_input",
+        string="Declarations",
+        compute="_compute_declaration_ids",
+        groups="hr.group_hr_manager",
+    )
 
-    declaration_count = fields.Integer(compute='_compute_declaration_count')
+    declaration_count = fields.Integer(
+        compute="_compute_declaration_count",
+        groups="hr.group_hr_manager",
+    )
 
     def _compute_declaration_ids(self):
         for employee in self:
