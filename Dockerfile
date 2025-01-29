@@ -12,7 +12,7 @@ COPY ./gitoo.yml /gitoo.yml
 RUN gitoo install-all --conf_file /gitoo.yml --destination "${THIRD_PARTY_ADDONS}"
 
 USER odoo
-
+COPY hr_contract_wage_type /mnt/extra-addons/hr_contract_wage_type 
 COPY hr_working_space /mnt/extra-addons/hr_working_space
 
 COPY .docker_files/main /mnt/extra-addons/main
