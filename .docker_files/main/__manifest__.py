@@ -12,6 +12,7 @@
     "summary": "Install all addons required for testing.",
     "depends": [
         "hr_contract_wage_type",
+        "hr_expense_same_month",
         "hr_working_space",
     ],
     "installable": True,
