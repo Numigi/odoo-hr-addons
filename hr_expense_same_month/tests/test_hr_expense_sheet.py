@@ -9,7 +9,6 @@ from ddt import ddt, data
 
 @ddt
 class TestHrExpenseSheet(common.SavepointCase):
-
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
