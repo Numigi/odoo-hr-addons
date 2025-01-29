@@ -13,6 +13,7 @@ RUN gitoo install-all --conf_file /gitoo.yml --destination "${THIRD_PARTY_ADDONS
 
 USER odoo
 
+COPY hr_contract_wage_type /mnt/extra-addons/hr_contract_wage_type 
 COPY hr_expense_same_month /mnt/extra-addons/hr_expense_same_month
 COPY hr_working_space /mnt/extra-addons/hr_working_space
 
