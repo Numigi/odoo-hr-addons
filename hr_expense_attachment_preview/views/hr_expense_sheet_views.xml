@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_expense_sheet_view_form" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.view.form.inherit</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expense_line_ids']/tree/button[@name='action_get_attachment_view']" position="before">
+                 <field name="attachment_ids" widget="many2many_attachment_preview" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

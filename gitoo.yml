@@ -17,3 +17,8 @@
   branch: "16.0"
   includes:
     - base_view_inheritance_extension
+
+- url: https://github.com/CybroOdoo/CybroAddons
+  branch: "16.0"
+  includes:
+    - many2many_attachment_preview
