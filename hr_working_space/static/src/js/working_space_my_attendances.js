@@ -35,7 +35,10 @@ odoo.define("hr_working_space.working_space_my_attendances", function (require) 
 
         sign_in_with_working_space: function (event) {
             var self = this;
-            var workingSpaceID = event.currentTarget.dataset.id;
+            var workingSpaceID = parseInt($(event.target).attr('id'));
+            console.log(this);
+            console.log(event);
+            console.log(workingSpaceID);
             this._rpc({
                 model: "hr.employee",
                 method: "attendance_manual_working_space",

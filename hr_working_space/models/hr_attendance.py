@@ -9,6 +9,4 @@ class HRWorkingSpace(models.Model):
 
     _inherit = "hr.attendance"
 
-    working_space_id = fields.Many2one(
-        "hr.working.space", string="Working Space", required=True
-    )
+    working_space_id = fields.Many2one("hr.working.space", string="Working Space")
