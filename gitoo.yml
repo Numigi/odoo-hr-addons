@@ -7,6 +7,7 @@
   branch: "16.0"
   includes:
     - payroll
+    - hr_payroll_period
 
 - url: https://github.com/OCA/server-ux
   branch: "16.0"
