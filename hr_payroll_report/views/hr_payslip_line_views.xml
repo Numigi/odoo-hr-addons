@@ -6,10 +6,10 @@
         <field name="model">hr.payslip.line</field>
         <field name="arch" type="xml">
             <pivot string="Report">
-                <field name="quantity" type="measure"/>
-                <field name="rate" type="measure"/>
-                <field name="amount" type="measure"/>
-                <field name="total" type="measure"/>
+                <field name="quantity" type="measure" />
+                <field name="rate" type="measure" />
+                <field name="amount" type="measure" />
+                <field name="total" type="measure" />
             </pivot>
         </field>
     </record>
@@ -23,8 +23,8 @@
                     (5, 0, 0), 
                     (0, 0, {'view_mode': 'tree', 'view_id': ref('payroll.hr_payslip_line_view_tree')}),
                     (0, 0, {'view_mode': 'pivot', 'view_id': ref('hr_payslip_line_report_view_pivot')}),
-                ]"/>
+                ]" />
     </record>
-    <menuitem action="action_hr_payslip_report" id="menu_hr_payslip_report" parent="payroll.payroll_menu_root" groups="payroll.group_payroll_manager"/>
+    <menuitem action="action_hr_payslip_report" id="menu_hr_payslip_report" parent="payroll.payroll_menu_root" groups="payroll.group_payroll_manager" />
 
 </odoo>

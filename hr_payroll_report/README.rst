@@ -6,18 +6,18 @@ Usage
 -----
 As a user in the Payroll Manager group, when I go to the Payroll application, I find a new `Report` menu.
 
-.. image:: static/description/payroll_report_menu.png
+.. image:: https://raw.githubusercontent.com/Numigi/odoo-hr-addons/16.0/hr_payroll_report/static/description/payroll_report_menu.png
 
 This menu is only accessible to a Payroll / Manager group.
 
 When I click on this menu, I have a list view of payroll calculation lines.
 This list view displays the same fields as this template's existing list view, but without context, it displays all lines from all payrolls, for all employees.
 
-.. image:: static/description/report_tree_view.png
+.. image:: https://raw.githubusercontent.com/Numigi/odoo-hr-addons/16.0/hr_payroll_report/static/description/report_tree_view.png
 
 From this view, I have a button to display the pivot view.
 
-.. image:: static/description/report_pivot_view.png
+.. image:: https://raw.githubusercontent.com/Numigi/odoo-hr-addons/16.0/hr_payroll_report/static/description/report_pivot_view.png
 
 This pivot view offers, from the `Measure` button:
 *Quantity*
