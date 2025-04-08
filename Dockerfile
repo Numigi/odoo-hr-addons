@@ -16,6 +16,7 @@ USER odoo
 COPY hr_contract_wage_type /mnt/extra-addons/hr_contract_wage_type 
 COPY hr_expense_attachment_preview /mnt/extra-addons/hr_expense_attachment_preview 
 COPY hr_expense_same_month /mnt/extra-addons/hr_expense_same_month
+COPY hr_payroll_canadian_declaration /mnt/extra-addons/hr_payroll_canadian_declaration
 COPY hr_payroll_report /mnt/extra-addons/hr_payroll_report
 COPY hr_working_space /mnt/extra-addons/hr_working_space
 

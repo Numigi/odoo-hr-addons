@@ -14,6 +14,7 @@
         "hr_contract_wage_type",
         "hr_expense_attachment_preview",
         "hr_expense_same_month",
+        "hr_payroll_canadian_declaration",
         "hr_payroll_report",
         "hr_working_space",
     ],
