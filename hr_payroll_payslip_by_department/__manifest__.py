@@ -2,16 +2,16 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'HR Payroll Paysplip by Department',
-    'version': '12.0.1.0.0',
-    'author': 'Numigi',
-    'maintainer': 'Numigi',
-    'license': 'AGPL-3',
-    'category': 'Human Resources',
-    'summary': 'This module allows to generate payslip by department',
-    'depends': ['hr_payroll', 'hr_period'],
-    'data': [
-        'views/hr_payslip_run_views.xml',
+    "name": "HR Payroll Paysplip by Department",
+    "version": "12.0.1.1.0",
+    "author": "Numigi",
+    "maintainer": "Numigi",
+    "license": "AGPL-3",
+    "category": "Human Resources",
+    "summary": "This module allows to generate payslip by department",
+    "depends": ["hr_payroll", "hr_period"],
+    "data": [
+        "views/hr_payslip_run_views.xml",
     ],
-    'installable': True,
+    "installable": True,
 }
