@@ -8,4 +8,5 @@ The working spaces will be proposed to the employee instead of the check-in butt
 
 Contributors
 ------------
-* Numigi (tm) and all its contributors (https://bit.ly/numigiens)
+
+The [Numigi](https://numigi.com/r/home) team is the contributor to this project. We help Quebec companies implement Odoo and Konvergo ERP.
