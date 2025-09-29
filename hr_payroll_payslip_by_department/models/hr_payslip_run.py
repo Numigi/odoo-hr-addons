@@ -17,7 +17,6 @@ class HrPayslipRun(models.Model):
         employee_ids field in the wizard.
         """
         res = super(HrPayslipRun, self).get_payslip_employees_wizard()
-
         if self.department_ids:
             employee_ids = self.env["hr.employee"].browse(
                 res["context"]["default_employee_ids"][0][2]
@@ -25,6 +24,7 @@ class HrPayslipRun(models.Model):
             if employee_ids:
                 employee_filtered_ids = employee_ids.filtered(
                     lambda e: e.department_id in self.department_ids
+                    and e.contract_id.state == 'open'
                 ).ids
             else:
                 employee_filtered_ids = (
@@ -33,6 +33,8 @@ class HrPayslipRun(models.Model):
                         [
                             ("department_id", "in", self.department_ids.ids),
                             ("company_id", "=", self.company_id.id),
+                            ('contract_id.schedule_pay', '=', self.schedule_pay),
+                            ('contract_id.state','=', 'open')
                         ]
                     )
                     .ids
