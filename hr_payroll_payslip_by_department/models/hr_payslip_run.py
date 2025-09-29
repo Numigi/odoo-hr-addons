@@ -16,28 +16,17 @@ class HrPayslipRun(models.Model):
         employees of the selected departments to the default value of the
         employee_ids field in the wizard.
         """
-        res = super(HrPayslipRun, self).get_payslip_employees_wizard()
+
+        res = super().get_payslip_employees_wizard()
+        company = self.company_id
+        domain = [('company_id', '=', company.id)]
         if self.department_ids:
-            employee_ids = self.env["hr.employee"].browse(
-                res["context"]["default_employee_ids"][0][2]
-            )
-            if employee_ids:
-                employee_filtered_ids = employee_ids.filtered(
-                    lambda e: e.department_id in self.department_ids
-                    and e.contract_id.state == 'open'
-                ).ids
-            else:
-                employee_filtered_ids = (
-                    self.env["hr.employee"]
-                    .search(
-                        [
-                            ("department_id", "in", self.department_ids.ids),
-                            ("company_id", "=", self.company_id.id),
-                            ('contract_id.schedule_pay', '=', self.schedule_pay),
-                            ('contract_id.state','=', 'open')
-                        ]
-                    )
-                    .ids
-                )
-            res["context"]["default_employee_ids"] = [(6, 0, employee_filtered_ids)]
+            domain.append(('department_id', 'in', self.department_ids.ids))
+        employee_ids = self.env['hr.employee'].search(domain)
+        emp_ids = []
+        for emp in employee_ids:
+            if (emp.contract_id.schedule_pay == self.schedule_pay
+                    and emp.contract_id.state == 'open') :
+                emp_ids.append(emp.id)
+        res["context"]["default_employee_ids"] = [(6, 0, emp_ids)]
         return res
