@@ -50,7 +50,7 @@ class PayslipCase(test_hr_fiscalyear.TestHrFiscalyear):
             "Contract 2", "quarterly", self.employee2, date_from
         )
 
-        self.payslip_obj.create(
+        payslip_1 = self.payslip_obj.create(
             {
                 "employee_id": self.employee1.id,
                 "contract_id": contract1.id,
@@ -60,7 +60,7 @@ class PayslipCase(test_hr_fiscalyear.TestHrFiscalyear):
                 "company_id": self.company.id,
             }
         )
-        self.payslip_obj.create(
+        payslip_2 = self.payslip_obj.create(
             {
                 "employee_id": self.employee2.id,
                 "contract_id": contract2.id,
@@ -86,7 +86,7 @@ class PayslipCase(test_hr_fiscalyear.TestHrFiscalyear):
 
         wizard = run.get_payslip_employees_wizard()
 
-        self.assertIn(
+        self.assertNotIn(
             self.employee1.id,
             wizard["context"]["default_employee_ids"][0][2],
             "Employee 1 should be included in the wizard.",
@@ -96,3 +96,23 @@ class PayslipCase(test_hr_fiscalyear.TestHrFiscalyear):
             wizard["context"]["default_employee_ids"][0][2],
             "Employee 2 shouldn't be included in the wizard.",
         )
+
+        payslip_1.contract_id.state = 'open'
+
+        run = self.run_obj.create(
+            {   "name": periods[0].name,
+                "date_start": periods[0].date_start,
+                "date_end": periods[0].date_end,
+                "date_payment": periods[0].date_payment,
+                "hr_period_id": periods[0].id,
+                "schedule_pay": "monthly",
+                "company_id": self.company.id,
+                "department_ids": [(6, 0, [self.department1.id])], })
+
+        wizard = run.get_payslip_employees_wizard()
+
+        self.assertIn(self.employee1.id,
+            wizard["context"]["default_employee_ids"][0][2],
+            "Employee 1 should be included in the wizard.", )
+
+

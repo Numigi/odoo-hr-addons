@@ -3,7 +3,7 @@
 
 {
     "name": "HR Payroll Paysplip by Department",
-    "version": "12.0.1.1.0",
+    "version": "12.0.1.2.0",
     "author": "Numigi",
     "maintainer": "Numigi",
     "license": "AGPL-3",
